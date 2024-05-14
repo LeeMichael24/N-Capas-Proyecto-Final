@@ -1,0 +1,78 @@
+.main-container{
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+}
+
+
+    /* Left Side START*/
+.leftSide{
+    width: 55%;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0;
+    align-content: center;
+
+    /* BG de la imagen */
+    background-image: url('../../assets/images/bg-houses.jpg');
+    filter: brightness(0.7);
+    background-position: 50% 50%;
+    background-size: auto;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+
+    margin-top: -40px;
+}
+
+.h1-login{
+    font-size: 34px;
+    color: var(--text-inverted);
+}
+    /* Left Side END*/
+
+
+    /* Rigth Side START */
+.rigthSide{
+    width: 45%;
+    height: 100vh;
+    padding: 0;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    align-items: center;
+
+    background-color: var(--bg-login);
+}
+
+.rigth-container{
+    margin: 0 auto;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+}
+
+.h3-copy{
+    font-size: 13px;
+    color: var(--text-inverted);
+    margin-top: 50px;
+}
+
+.btn-google{
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 10px;
+}
+    /* Rigth Side END */
+
+

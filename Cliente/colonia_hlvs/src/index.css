@@ -1,0 +1,66 @@
+
+/* Aplicado a todos los elementos */
+:root{
+  /* Text */
+  --text-primary: rgba(6, 13, 56, 1);
+  --text-secondary: rgba(73, 69, 79, 1);
+  --text-inverted: white;
+
+  /* Background */
+  --bg-login: rgba(6, 13, 56, 1);
+  --
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Elementos de bloque */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Cambia la fuente según tus preferencias */
+  font-size: 16px; /* Cambia el tamaño de fuente base según tus preferencias */
+  line-height: 1.6; /* Cambia la altura de línea según tus preferencias */
+  background-color: #ffffff; /* Cambia el color de fondo según tus preferencias */
+  color: #333333; /* Cambia el color de texto según tus preferencias */
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto */
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Elementos de formulario */
+button,
+input,
+select,
+textarea {
+  font-family: inherit; /* Hereda la fuente */
+  font-size: inherit; /* Hereda el tamaño de fuente */
+}
+
+/* Imágenes */
+img {
+  max-width: 100%; /* Las imágenes no se desbordan de su contenedor */
+  height: auto; /* Mantiene la relación de aspecto de las imágenes */
+}
