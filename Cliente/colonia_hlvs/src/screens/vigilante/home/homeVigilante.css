@@ -1,0 +1,69 @@
+/* General Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .login-options {
+    margin-bottom: 20px;
+  }
+  
+  /* QR Scanner Styles */
+  .qr-scanner-container {
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .qr-scanner-container video {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .qr-code-data {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Login Form Styles */
+  .login-form-container {
+    width: 300px; /* Adjust as needed */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles (Optional) */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .qr-scanner-container,
+    .login-form-container {
+      width: calc(50% - 20px); /* Adjust as needed */
+    }
+  }
+  

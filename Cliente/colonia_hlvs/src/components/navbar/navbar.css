@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--bg-login);
+  }
+  
+  .logo img {
+    max-width: 100px; /* Ajusta el tamaño máximo de tu logo */
+  }
+  
+  .welcome-message {
+    font-size: 18px;
+  }
+  
+  /* Media queries para hacer el navbar responsive */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  }
+  
