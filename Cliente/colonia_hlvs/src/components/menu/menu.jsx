@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import ButtonMenu from './menuButtom/menuButtom';
-import './Menu.css'; // Asegúrate de definir estilos aquí
+import './menu.css'; // Asegúrate de definir estilos aquí
 
 const Menu = ({ buttons }) => {
   const isSingleButton = buttons.length === 1; // Verificar si hay solo un botón
