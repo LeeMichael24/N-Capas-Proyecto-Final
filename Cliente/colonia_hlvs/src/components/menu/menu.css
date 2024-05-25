@@ -1,0 +1,14 @@
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.menu-container > .button-menu {
+  width: calc(50% - 20px); /* Calcula el 50% del ancho del contenedor menos el margen */
+  max-width: 110px; /* Limita el ancho máximo para que no se estiren */
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho total del botón */
+}
