@@ -9,7 +9,7 @@
 
     .Hint{
         display: flex;
-        font-size: 1.5vh;
+        font-size: var(--font-size);
         background-color: var(--skyeblue);
         color: var(--blue);
         margin-top: 2rem;
@@ -22,9 +22,34 @@
         border-radius: var(--rad);
 
         .icon{
-            margin: 10px;
+            margin-right: 20px;
         }
     }
+
+    .myQR{
+        width: 30vh;
+    }
+
+    /* .slim_button{
+        background-color: var(--blue);
+        color: white;
+        padding: 0.5rem 2rem;
+        border-radius: var(--big-rad);
+        font-size: var(--font-size); 
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: --poppi, sans-serif;
+        text-transform: none;
+
+        &:hover{
+            background-color: var(--skyeblue);
+        }
+
+        .button_icon{
+            margin-right: 0.5rem;
+        }
+    
+    } */
 }
 
 

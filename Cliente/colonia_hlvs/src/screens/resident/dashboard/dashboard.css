@@ -39,6 +39,12 @@ h2{
     border-radius: var(--rad);
     border: 0cap;
     margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: var(--skyeblue);
+    }
 
     .icon{
         font-size: 22vh;

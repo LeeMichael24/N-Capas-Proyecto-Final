@@ -1,0 +1,22 @@
+.slim_button{
+    display: flex;
+    background-color: var(--blue);
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: var(--big-rad);
+    font-size: var(--font-size); 
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: var(--poppi), sans-serif;
+    text-transform: none;
+    align-items: center;
+
+    &:hover{
+        background-color: var(--skyeblue);
+    }
+
+    svg{
+        margin-right: 0.5rem;
+    }
+
+}

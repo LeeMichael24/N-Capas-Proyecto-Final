@@ -3,5 +3,7 @@
     --blue: #0d1b2a;
     --skyeblue: #D2E0FB;
     --poppi: 'Poppins';
-    --rad: 28px
+    --rad: 28px;
+    --big-rad: 100px;
+    --font-size: 1.5vh;
 }
