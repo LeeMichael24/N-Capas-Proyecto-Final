@@ -1,0 +1,41 @@
+@import url('../../../assets/vars.css');
+
+.Left{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .Hint{
+        display: flex;
+        font-size: 1.5vh;
+        background-color: var(--skyeblue);
+        color: var(--blue);
+        margin-top: 2rem;
+        font-weight: normal;
+        padding: 1rem;
+        width: 30vh;
+        flex-flow: row;
+        align-items: center;
+        text-align: left;
+        border-radius: var(--rad);
+
+        .icon{
+            margin: 10px;
+        }
+    }
+}
+
+
+.Right{
+    background-color: black;
+
+}
+
+.father{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh;
+    font-family: --poppi, sans-serif;
+}

@@ -1,0 +1,60 @@
+@import url('../../../assets/vars.css');
+
+h2{
+    font-size: 3vh;
+    font-family: var(--poppi);
+    color: var(--blue);
+    font-weight: normal;
+}
+
+.Left{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Right{
+    background-color: black;
+
+}
+
+.father{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh;
+    
+}
+
+.QR_Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    height: 30vh;
+    flex-direction: column;
+    background-color: var(--blue);
+    border-radius: var(--rad);
+    border: 0cap;
+    margin: 20px;
+
+    .icon{
+        font-size: 22vh;
+        color: white;
+    }
+    span{
+        font-size: 3vh;
+        color: white;
+        font-family: --poppi, sans-serif;
+    }
+}
+
+h4{
+    font-family: --poppi, sans-serif;
+    font-weight: normal;
+    width: 20vh;
+    text-align: center;
+    font-size: 1.8vh;
+}
