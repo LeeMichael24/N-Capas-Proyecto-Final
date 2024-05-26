@@ -20,7 +20,7 @@ function ResidentQr(){
                 <IconButton icon={<QrCode2RoundedIcon/>} text='Refrescar'/>
              </div>
              <div className='Right'>
-
+                 Aqui va el menu de @Limon.
              </div>
         </div>
     )

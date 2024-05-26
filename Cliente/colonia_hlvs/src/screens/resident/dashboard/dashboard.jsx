@@ -16,7 +16,7 @@ function dashboard(){
                     <h4> Presione el boton para generar el codigo-QR</h4>
              </div>
              <div className='Right'>
-
+                Aqui va el menu de @Limon.
              </div>
         </div>
     )

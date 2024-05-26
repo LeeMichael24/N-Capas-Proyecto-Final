@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
 import Dashboard from './screens/resident/dashboard/dashboard';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
+import SingleInvitation from './screens/resident/invitations/single/singleInvitation';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -26,6 +27,7 @@ function App() {
         <Route path="invitadoHome" element={<InvitadoHome />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="my-qr" element={<ResidentQr />} />
+        <Route path="invitacion-simple" element={<SingleInvitation />} />
 
         {/* we want to protect these routes */}
         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
