@@ -1,17 +1,24 @@
 .invitadoHome {
-    display: flex;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
 
 .left-container{
-  width: 100%;
+  width: 60%;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: start;
+}
+
+.h1-visitante{
+  margin-bottom: 40px;
 }
 
   
 .rigt-container{
-  width: 100%;
+  width: 50%;
   display: grid;
   align-content: center;
   margin: 0 auto;
@@ -19,4 +26,3 @@
   justify-self: center;
   justify-content: center;
 }
-
