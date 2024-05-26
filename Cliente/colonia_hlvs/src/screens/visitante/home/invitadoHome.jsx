@@ -9,13 +9,14 @@ function InvitadoHome() {
       { icon: `${testPic}`, name: 'Cerrar sesión', path: '/login' },
       { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
       { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
+      { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
     ];
   return (
     <div className="invitadoHome">
-      <div className="content">
-        <div className="main-content">
-          {/* Aquí va el contenido principal de la página */}
-        </div>
+      <div className="left-container">
+        
+      </div>
+      <div className="rigt-container">
         <Menu buttons={buttons} />
       </div>
     </div>
