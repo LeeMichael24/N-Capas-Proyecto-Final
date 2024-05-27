@@ -1,11 +1,12 @@
+import React from 'react';
+import './recurrentInvitation.css';
 import { TextField } from '@mui/material';
-import './singleInvitation.css';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import IconButton from '../../../../components/buttons/IconButton/IconButton';
+import DayButton from '../../../../components/buttons/dayButton/dayButton';
 
-function SingleInvitation(){
-    // const [selectedDate, handleDateChange] = useState(new Date());
+function RecurrntInvitation() {
 
     return(
         <div className='father'>
@@ -17,8 +18,19 @@ function SingleInvitation(){
                     className='input longText'
                 />
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker className='longText input' label='Fecha'/>
+                    <DatePicker className='longText input' label='Fecha Inicio'/>
+                    <DatePicker className='longText input' label='Fecha Fin'/>
                 </LocalizationProvider>
+                <div className='days'>
+                    <p>Especifique los dias</p>
+                    <DayButton text={'L'}/>
+                    <DayButton text={'M'}/>
+                    <DayButton text={'M'}/>
+                    <DayButton text={'J'}/>
+                    <DayButton text={'V'}/>
+                    <DayButton text={'S'}/>
+                    <DayButton text={'D'}/>
+                </div>
                 <div className='time_pickers'>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <TimePicker
@@ -38,4 +50,4 @@ function SingleInvitation(){
     )
 }
 
-export default SingleInvitation;
+export default RecurrntInvitation;

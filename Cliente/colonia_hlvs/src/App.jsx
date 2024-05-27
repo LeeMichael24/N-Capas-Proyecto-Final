@@ -6,6 +6,7 @@ import InvitadoHome from './screens/visitante/home/invitadoHome';
 import Dashboard from './screens/resident/dashboard/dashboard';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
 import SingleInvitation from './screens/resident/invitations/single/singleInvitation';
+import RecurrntInvitation from './screens/resident/invitations/recurrent/recurrentInvitation';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -28,6 +29,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="my-qr" element={<ResidentQr />} />
         <Route path="invitacion-simple" element={<SingleInvitation />} />
+        <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
 
         {/* we want to protect these routes */}
         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
