@@ -1,0 +1,30 @@
+.Left{
+
+    .longText{
+        width: 40vh;
+        
+    }
+
+    .time_pickers{
+        width: 40vh;
+        display: flex;
+        justify-content: space-between;
+    
+        .time{
+            max-width: 18vh;
+        }
+    }
+
+    .input{
+        margin: 20px 0px;
+    }
+
+    .days{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 40vh;
+    
+    }
+    
+}
