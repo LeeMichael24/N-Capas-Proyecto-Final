@@ -1,0 +1,87 @@
+h2{
+    font-size: 3vh;
+    color: var(--text-primary);
+    font-weight: normal;
+}
+
+.Left{
+    min-width: 50%;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Right{
+    background-color: black;
+    min-width: 50%;
+    height: 100vh;
+}
+
+#stay{
+    background-color: black;
+    min-width: 50%;
+    height: 100vh;
+}
+
+.father{
+    display: flex;
+    flex-direction: row;
+}
+
+.QR_Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    height: 30vh;
+    flex-direction: column;
+    background-color: var(--button-accent);
+    border-radius: var(--rad);
+    border: 0cap;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: var(--accent);
+    }
+
+    .icon{
+        font-size: 22vh;
+        color: white;
+    }
+    span{
+        font-size: 3vh;
+        color: white;
+    }
+}
+
+h4{
+    font-weight: normal;
+    width: 22vh;
+    text-align: center;
+    font-size: 1.8vh;
+}
+
+
+@media (max-width: 768px) {
+    .father{
+        flex-direction: column; 
+
+        .Left{
+            min-height: 40vh;
+            max-height: 70vh;
+            box-sizing: border-box;
+        }
+        .Right{
+            display: none;
+        }
+        #stay{
+            height: auto;
+        }
+    }
+}
