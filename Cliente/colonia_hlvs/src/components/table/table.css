@@ -1,0 +1,19 @@
+
+
+.MuiDataGrid-root {
+    border-radius: 10px;
+  }
+  
+  .MuiDataGrid-cell {
+    text-align: center;
+    justify-content: center;
+    margin-right: 0px;
+  }
+  
+  .MuiDataGrid-columnHeader {
+    background-color: rgba(6, 13, 56, 1);
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin-right: 0px;
+  }
