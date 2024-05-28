@@ -2,9 +2,8 @@
 
     .Hint{
         display: flex;
-        font-size: var(--font-size);
-        background-color: var(--skyeblue);
-        color: var(--blue);
+        font-size: var(--hint-font-size);
+        background-color: var(--accent);
         margin-top: 2rem;
         font-weight: normal;
         padding: 1rem;
