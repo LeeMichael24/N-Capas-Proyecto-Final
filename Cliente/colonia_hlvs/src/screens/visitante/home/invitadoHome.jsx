@@ -20,6 +20,7 @@ function InvitadoHome() {
         <div className="left-container">
           <h1 className="h1-visitante">Tus invitaciones</h1>
           <div className="card-style-mt">
+            {/* esto necesita un evento handler event */}
             <Card />
           </div>
         </div>
