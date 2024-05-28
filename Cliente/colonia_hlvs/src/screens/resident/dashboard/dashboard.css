@@ -1,5 +1,3 @@
-@import url('../../../assets/vars.css');
-
 h2{
     font-size: 3vh;
     font-family: var(--poppi);
@@ -8,24 +6,32 @@ h2{
 }
 
 .Left{
+    min-width: 50%;
+    height: 100vh;
     display: flex;
     background-color: white;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: var(--poppi), sans-serif;
     
 }
 
 .Right{
     background-color: black;
+    min-width: 50%;
+    height: 100vh;
+}
 
+#stay{
+    background-color: black;
+    min-width: 50%;
+    height: 100vh;
 }
 
 .father{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100vh;
-    
+    display: flex;
+    flex-direction: row;
 }
 
 .QR_Button{
@@ -63,4 +69,23 @@ h4{
     width: 20vh;
     text-align: center;
     font-size: 1.8vh;
+}
+
+
+@media (max-width: 768px) {
+    .father{
+        flex-direction: column; 
+
+        .Left{
+            min-height: 40vh;
+            max-height: 70vh;
+            box-sizing: border-box;
+        }
+        .Right{
+            display: none;
+        }
+        #stay{
+            height: auto;
+        }
+    }
 }

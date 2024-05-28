@@ -1,13 +1,4 @@
-@import url('../../../../assets/vars.css');
-
 .Left{
-    display: flex;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    font-family: var(--poppi), sans-serif;
 
     .longText{
         width: 40vh;
@@ -35,17 +26,5 @@
         width: 40vh;
     
     }
-    
-}
-
-.Right{
-    background-color: black;
-
-}
-
-.father{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100vh;
     
 }

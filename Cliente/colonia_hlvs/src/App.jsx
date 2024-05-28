@@ -5,8 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
 import Dashboard from './screens/resident/dashboard/dashboard';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
-import SingleInvitation from './screens/resident/invitations/single/singleInvitation';
-import RecurrntInvitation from './screens/resident/invitations/recurrent/recurrentInvitation';
+import SingleInvitation from './screens/resident/invitations/singleInvitation';
+import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],

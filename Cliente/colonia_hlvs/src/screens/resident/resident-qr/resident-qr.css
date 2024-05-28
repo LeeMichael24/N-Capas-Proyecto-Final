@@ -1,11 +1,4 @@
-@import url('../../../assets/vars.css');
-
 .Left{
-    display: flex;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
     .Hint{
         display: flex;
@@ -29,38 +22,4 @@
     .myQR{
         width: 30vh;
     }
-
-    /* .slim_button{
-        background-color: var(--blue);
-        color: white;
-        padding: 0.5rem 2rem;
-        border-radius: var(--big-rad);
-        font-size: var(--font-size); 
-        cursor: pointer;
-        transition: 0.3s;
-        font-family: --poppi, sans-serif;
-        text-transform: none;
-
-        &:hover{
-            background-color: var(--skyeblue);
-        }
-
-        .button_icon{
-            margin-right: 0.5rem;
-        }
-    
-    } */
-}
-
-
-.Right{
-    background-color: black;
-
-}
-
-.father{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100vh;
-    font-family: --poppi, sans-serif;
 }
