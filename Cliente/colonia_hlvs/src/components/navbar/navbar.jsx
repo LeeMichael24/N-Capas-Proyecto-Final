@@ -1,7 +1,7 @@
 
 import './navbar.css';
 
-function navbar() {
+function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
@@ -15,4 +15,4 @@ function navbar() {
   )
 }
 
-export default navbar
+export default Navbar
