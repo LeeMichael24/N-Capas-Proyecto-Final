@@ -40,7 +40,7 @@ dd {
 
 body {
   font-family: 'Poppins', sans-serif; /* Cambia la fuente según tus preferencias */
-  font-size: 16px; /* Cambia el tamaño de fuente base según tus preferencias */
+  font-size: 12px; /* Cambia el tamaño de fuente base según tus preferencias */
   line-height: 1.6; /* Cambia la altura de línea según tus preferencias */
   background-color: #ffffff; /* Cambia el color de fondo según tus preferencias */
   color: var(--text-primary); /* Cambia el color de texto según tus preferencias */

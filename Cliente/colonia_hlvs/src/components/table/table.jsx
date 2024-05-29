@@ -6,7 +6,7 @@ import './table.css';
 
 export default function DataGridDemo({ rows, columns }) {
   return (
-    <Box sx = {{width: '85%' }}>
+    <Box sx = {{}}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -21,7 +21,7 @@ export default function DataGridDemo({ rows, columns }) {
         disableColumnResize={true} 
         disableRowSelectionOnClick={true}
         autoHeight={true} 
-        //autowidth={true} // Si alguien utiliza esta cosa para el ancho de la tabla tenga en cuenta que, 
+        autowidth={true} // Si alguien utiliza esta cosa para el ancho de la tabla tenga en cuenta que, 
         //tambien puede configurar el ancho de las columnas desde el objeto columns o desde el contenedor Box
         disableColumnSorting={true}
       />
