@@ -13,7 +13,7 @@ const ButtonMenu = ({ icon, name, path }) => {
 
   return (
     <div className="button-menu" onClick={handleClick}>
-      <img src={icon} alt={name} className="button-icon" />
+      {icon}
       <span className="button-name">{name}</span>
     </div>
   );
