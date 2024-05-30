@@ -13,6 +13,44 @@
     gap: 25px;
   }
 
+  .button-update-enabled {
+    background-color: var(--bg-login);
+    font-size: 1rem;
+    font-size: 0.9rem;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-update-disabled {
+    background-color: var(--accent);
+    font-size: 0.8rem;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    cursor: not-allowed;
+    color: black;
+  }
+
+  .button-delete-enabled {
+    background-color: var(--bg-login);
+    font-size: 1rem;
+    font-size: 0.9rem;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-delete-disabled {
+    background-color: var(--accent);
+    font-size: 0.8rem;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    cursor: not-allowed;
+    color: var(--text--primary);
+  }
+
   
   
   
