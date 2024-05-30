@@ -3,6 +3,7 @@ import Layout from './components/layout/layout';
 import Missing from './components/missing/missing';
 import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
+import InvitacionA from './screens/visitante/Invitacion/invitacionA';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -22,6 +23,7 @@ function App() {
         {/* public routes */}
         <Route path="login" element={<Login />} />
         <Route path="invitadoHome" element={<InvitadoHome />} />
+        <Route path='/invitacion/:id' element={<InvitacionA />} />
 
         {/* we want to protect these routes */}
         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
