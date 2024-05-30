@@ -1,0 +1,24 @@
+.Left{
+
+    .Hint{
+        display: flex;
+        font-size: var(--hint-font-size);
+        background-color: var(--accent);
+        margin-top: 2rem;
+        font-weight: normal;
+        padding: 1rem;
+        width: 30vh;
+        flex-flow: row;
+        align-items: center;
+        text-align: left;
+        border-radius: var(--rad);
+
+        .icon{
+            margin-right: 20px;
+        }
+    }
+
+    .myQR{
+        width: 30vh;
+    }
+}
