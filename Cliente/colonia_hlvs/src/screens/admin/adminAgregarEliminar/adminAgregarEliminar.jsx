@@ -2,19 +2,19 @@ import React from 'react';
 import Menu from '../../../components/menu/menu';
 import Navbar from '../../../components/navbar/navbar';
 import DataGridDemo from '../../../components/table/table';
-import './adminCasa.css';
+import './adminAgregarEliminar.css';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import SelectTextFields from '../../../components/textField/textField';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { BasicCard, SingleTextFieldCard } from '../../../components/cardCasas/cardCasas'
+import { toast } from 'react-toastify';
 
-function AdminCasa() {
 
-    const navigate = useNavigate();
+
+function AgregarEliminar() {
 
     const columns = [
         {
@@ -46,7 +46,8 @@ function AdminCasa() {
         },
     ];
 
-    const rows = [
+
+    const [rows, setRows] = useState([
         { id: 1, Contador: 1, Casa: '#1', Capacidad: 3, },
         { id: 2, Contador: 2, Casa: '-', Capacidad: '-', },
         { id: 3, Contador: 3, Casa: '#3', Capacidad: 3, },
@@ -57,8 +58,8 @@ function AdminCasa() {
         { id: 8, Contador: 8, Casa: '#8', Capacidad: 3, },
         { id: 9, Contador: 9, Casa: '#9', Capacidad: 3, },
         { id: 10, Contador: 10, Casa: '#10', Capacidad: 3, },
+    ]);
 
-    ];
 
     const buttons = [
         { icon: <ShowChartIcon />, name: 'Panel de Control', path: '/admin' },
@@ -66,6 +67,8 @@ function AdminCasa() {
         { icon: <PersonIcon />, name: 'Mi Perfil', path: '/cerrar-sesion' },
         { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
     ];
+
+
 
     return (
         <div className="parent">
@@ -76,18 +79,22 @@ function AdminCasa() {
 
             <div className="content">
 
-                <h1 className='title'>Administrar Casas</h1>
-
-                <div className="text-field">
-                    <SelectTextFields />
-                    <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' onClick={() => navigate('/admincasa/agregar-eliminar')} />
-                </div>
+                <h1 className='title'>Gestionar Colonia</h1>
 
                 <h1 className="title-r">Resgitro de Casas</h1>
 
                 <div className="table-card-container">
                     <DataGridDemo columns={columns} rows={rows} />
+                </div>
 
+                <div className="opciones-casa-container">
+                    <div className='agregar'>
+                        <BasicCard rows={rows} setRows={setRows} />
+                    </div>
+
+                    <div className='eliminar'>
+                        <SingleTextFieldCard rows={rows} setRows={setRows} />
+                    </div>
                 </div>
             </div>
 
@@ -96,5 +103,5 @@ function AdminCasa() {
             </div>
 
         </div>
-    );
-} export default AdminCasa;
+    )
+} export default AgregarEliminar;

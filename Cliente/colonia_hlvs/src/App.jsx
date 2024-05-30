@@ -9,6 +9,7 @@ import SingleInvitation from './screens/resident/invitations/singleInvitation';
 import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
 import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
+import AgregarEliminar from './screens/admin/adminAgregarEliminar/adminAgregarEliminar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -38,6 +39,8 @@ function App() {
           <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
           <Route path="admin" element={<AdminHome />} />
           <Route path="admincasa" element={<AdminCasa />} />
+          <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
+
 
 
 
