@@ -40,7 +40,7 @@ export default function SelectTextFields() {
           defaultValue=""
           sx={{
             fontFamily: 'Poppins',
-            boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.10)', // Agrega sombra al TextField
+            boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.10)',
           }}
         >
           <MenuItem value="">

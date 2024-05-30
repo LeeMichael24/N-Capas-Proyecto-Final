@@ -5,7 +5,7 @@
     padding-bottom: 20px;
 }
 
-.table-container {
+.table-card-container {
     padding-left: 50px; 
     padding-bottom: 20px;
 }
@@ -19,8 +19,14 @@
     align-items: center;
 }
 
-.button-panel-admin {
-    width: 70px;
+
+.button-panel-admin{
+    background-color: var(--bg-login);
+    width: 30%;
+    height: 50px;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
 }
     
 

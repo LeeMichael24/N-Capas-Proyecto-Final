@@ -9,6 +9,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import QuantityInput from '../../../components/numberImput/numberImput';
+import IconButton from '../../../components/buttons/IconButton/IconButton';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AdminHome() {
 
@@ -74,6 +78,26 @@ function AdminHome() {
     { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
   ];
 
+  const [value, setValue] = useState(30);
+  const [isUpdated, setIsUpdated] = useState(false);
+  const buttonClass = isUpdated ? 'button-update-enabled' : 'button-update-disabled';
+
+
+
+  const handleUpdateClick = () => {
+    console.log(`El nuevo valor es ${value}`);
+    setIsUpdated(false); 
+    toast.success(`El intervalo de tiempo se ha actualizado a ${value} minutos`);
+
+  };
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    setIsUpdated(true);
+  };
+
+
+
   return (
     <div className="parent">
 
@@ -96,8 +120,10 @@ function AdminHome() {
         </div>
 
         <h1 className='title-r'>Intervalo de duracion de invitaciones</h1>
+
         <div className='duracion'>
-            <QuantityInput />
+        <QuantityInput value={value} onChange={handleChange} />
+        <IconButton className= {buttonClass} icon='' text='Actualizar' onClick={handleUpdateClick} disabled={!isUpdated}  />
         </div>
       </div>
 

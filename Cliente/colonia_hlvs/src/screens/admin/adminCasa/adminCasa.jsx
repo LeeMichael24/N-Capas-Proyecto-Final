@@ -9,8 +9,11 @@ import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SelectTextFields from '../../../components/textField/textField';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
+import { useState } from 'react';
 
 function AdminCasa() {
+
+    const [showComponents, setShowComponents] = useState(false);
 
     const columns = [
         {
@@ -64,6 +67,8 @@ function AdminCasa() {
     ];
 
 
+
+
     return (
         <div className="parent">
 
@@ -75,14 +80,14 @@ function AdminCasa() {
                 <h1 className='title'>Administrar Casas</h1>
 
                 <div className="text-field">
-                    
-                        <SelectTextFields />
-                        <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' />
+
+                    <SelectTextFields />
+                    <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' onClick={() => setShowComponents(true)} />
                 </div>
 
                 <h1 className='title-r'>Resgitro de Casas</h1>
 
-                <div className="table-container">
+                <div className="table-card-container">
                     <DataGridDemo columns={columns} rows={rows} />
                 </div>
 

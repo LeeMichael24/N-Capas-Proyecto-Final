@@ -9,6 +9,8 @@ import SingleInvitation from './screens/resident/invitations/singleInvitation';
 import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
 import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -21,24 +23,26 @@ import AdminCasa from './screens/admin/adminCasa/adminCasa';
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route index element={<Login />} /> {/* por el momento de prueba queda si */}
-      
-        {/* public routes */}
-        <Route path="login" element={<Login />} />
-        <Route path="invitadoHome" element={<InvitadoHome />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="my-qr" element={<ResidentQr />} />
-        <Route path="invitacion-simple" element={<SingleInvitation />} />
-        <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
-        <Route path="admin" element={<AdminHome/>} />
-        <Route path="admincasa" element={<AdminCasa/>} />
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Login />} /> {/* por el momento de prueba queda si */}
+
+          {/* public routes */}
+          <Route path="login" element={<Login />} />
+          <Route path="invitadoHome" element={<InvitadoHome />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="my-qr" element={<ResidentQr />} />
+          <Route path="invitacion-simple" element={<SingleInvitation />} />
+          <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
+          <Route path="admin" element={<AdminHome />} />
+          <Route path="admincasa" element={<AdminCasa />} />
 
 
 
-        {/* we want to protect these routes */}
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
+          {/* we want to protect these routes */}
+          {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
           <Route path="/" element={<Home />} />
         </Route>
 
@@ -55,10 +59,11 @@ function App() {
           <Route path="lounge" element={<Lounge />} />
         </Route> */}
 
-        {/* catch all */}
-        <Route path="*" element={<Missing />} />
-      </Route>
-    </Routes>
+          {/* catch all */}
+          <Route path="*" element={<Missing />} />
+        </Route>
+      </Routes>
+    </>
   );
 
 }
