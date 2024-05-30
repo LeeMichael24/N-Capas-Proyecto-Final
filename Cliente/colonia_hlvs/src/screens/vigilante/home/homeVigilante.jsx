@@ -1,53 +1,55 @@
-import React from 'react';
-import QRCodeScanner from 'react-qrcode-scanner';
-import { Container, Row, Col } from 'react-bootstrap'; // Import Bootstrap components for responsive layout
+
+import TextField from "@mui/material/TextField";
+import "./homeVigilante.css";
+import Box from '@mui/material/Box';
+import Navbar from "../../../components/navbar/navbar";
+
 
 const HomeVigilante = () => {
-  const [qrCodeData, setQRCodeData] = React.useState(''); // Estado para los datos del código QR
 
-  const handleScan = (data) => {
-    setQRCodeData(data);
-    console.log('QR code scanned:', data); // Simulando el envío de datos a la API
-  };
+
 
   return (
-    <Container className="login-container">
-      <Row>
-        <Col md={6} className="qr-scanner-container">
-          <h2>Inicia sesión con QR</h2>
-          <QRCodeScanner onScan={handleScan} />
-          {qrCodeData && (
-            <div className="qr-code-data">Código escaneado: {qrCodeData}</div>
-          )}
-        </Col>
-        <Col md={6} className="login-form-container">
-          <h2>Inicia sesión con formulario</h2>
-          <form>
-            <div className="form-group">
-              <label htmlFor="username">Nombre de usuario:</label>
-              <input
-                type="text"
-                id="username"
-                className="form-control"
-                placeholder="Ingrese su nombre de usuario"
+    <div className="containerMain">
+      <Navbar />
+      <div className="container">
+        <div className="qr-scanner-container">
+          <h2>Escanear QR</h2>
+          {/* aca tiene que abrir la camara y escanear el qr */}
+        </div>
+        <div className="login-form-container">
+          <h2>Ingresar entrada anónima</h2>
+          <Box className="form-container" noValidate autoComplete="off">
+            <div className="textFlied">
+              <TextField
+                id="outlined-name-input"
+                label="Nombre"
+                type="name"
+                autoComplete="current-name"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Contraseña:</label>
-              <input
-                type="password"
-                id="password"
-                className="form-control"
-                placeholder="Ingrese su contraseña"
+            <div className="textFlied">
+              <TextField
+                id="outlined-dui-input"
+                label="DUI"
+                type="dui"
+                autoComplete="current-dui"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Iniciar sesión
-            </button>
-          </form>
-        </Col>
-      </Row>
-    </Container>
+            <div className="textFlied">
+              <TextField
+                id="outlined-comentario-input"
+                label="Comentario"
+                type="comentario"
+                autoComplete="current-comentario"
+              />
+            </div>
+          </Box>
+
+          <button> Registrar </button>
+        </div>
+    </div>
+    </div>
   );
 };
 
