@@ -3,6 +3,7 @@ import Layout from './components/layout/layout';
 import Missing from './components/missing/missing';
 import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
+import InvitacionA from './screens/visitante/Invitacion/invitacionA';
 import Dashboard from './screens/resident/dashboard/dashboard';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
 import SingleInvitation from './screens/resident/invitations/singleInvitation';
@@ -28,13 +29,13 @@ function App() {
         {/* public routes */}
         <Route path="login" element={<Login />} />
         <Route path="invitadoHome" element={<InvitadoHome />} />
+        <Route path='/invitacion/:id' element={<InvitacionA />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="my-qr" element={<ResidentQr />} />
         <Route path="invitacion-simple" element={<SingleInvitation />} />
         <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
         <Route path="admin" element={<AdminHome/>} />
         <Route path="admincasa" element={<AdminCasa/>} />
-
 
 
         {/* we want to protect these routes */}
