@@ -1,18 +1,17 @@
 import "./invitadoHome.css";
 import { useNavigate } from "react-router-dom";
 import Menu from "../../../components/menu/menu";
-import testPic from "../../../assets/react.svg";
 import Navbar from "../../../components/navbar/navbar";
 import CardDetail from "../../../components/cards/cardDetail/cardDetail";
+import PersonIcon from '@mui/icons-material/Person';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 function InvitadoHome() {
-    const buttons = [
-        { icon: `${testPic}`, name: 'Mi perfil', path: '/mi-perfil' },
-        { icon: `${testPic}`, name: 'Cerrar sesión', path: '/login' },
-        { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
-        { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
-        { icon: `${testPic}`, name: 'Cerrar sesión', path: '/cerrar-sesion' },
-    ];
+  const buttons = [
+    { icon: <PersonIcon />, name: 'Mi Perfil', path: '/cerrar-sesion' },
+    { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
+  ];
 
     const Data = [
         { id: 1, title: '34', date: '04/20/24', time: '14:30' },
