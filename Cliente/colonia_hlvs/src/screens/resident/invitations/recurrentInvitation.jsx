@@ -1,10 +1,15 @@
 import React from 'react';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import DayButton from '../../../components/buttons/dayButton/dayButton';
+import Menu from '../../../components/menu/menu';
 //MUI
 import { TextField } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
+import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 //sTYLES
 import './Invitation.css'
@@ -12,6 +17,11 @@ import '../dashboard/dashboard.css';
 
 
 function RecurrntInvitation() {
+
+    const buttonsVisit = [{icon: <InsertInvitationRoundedIcon/> , name: 'Invitacion Simple', path:'/invitacion-simple'},
+    {icon: <EventRepeatRoundedIcon/> , name: 'Invitacion Recurrente', path:'/invitacion-recurrente'},
+    {icon: <PersonRoundedIcon/> , name: 'Mi perfil', path:'/admin'},
+    {icon: <LogoutRoundedIcon/> , name: 'Cerrar Sesion', path:'/'},]
 
     return(
         <div className='father'>
@@ -49,7 +59,7 @@ function RecurrntInvitation() {
                 <IconButton icon={null} text={'Solicitar Invitacion'} />
             </div>
             <div className='Right'>
-                Aqui va el menu de @Limon.
+                <Menu buttons={buttonsVisit} className='funca'/>
             </div>
         </div>
     )

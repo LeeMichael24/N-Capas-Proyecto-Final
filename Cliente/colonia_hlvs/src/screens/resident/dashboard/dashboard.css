@@ -5,7 +5,7 @@ h2{
 }
 
 .Left{
-    min-width: 50%;
+    min-width: 65%;
     height: 100vh;
     display: flex;
     background-color: white;
@@ -16,15 +16,22 @@ h2{
 }
 
 .Right{
-    background-color: black;
-    min-width: 50%;
+    min-width: 35%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue
+
 }
 
 #stay{
-    background-color: black;
-    min-width: 50%;
+    display: flex;
+    min-width: 35%;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
 }
 
 .father{
