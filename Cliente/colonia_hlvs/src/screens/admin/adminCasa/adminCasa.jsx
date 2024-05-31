@@ -7,10 +7,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import SelectTextFields from '../../../components/textField/textField';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
+
+
 
 function AdminCasa() {
 
@@ -44,6 +45,23 @@ function AdminCasa() {
             align: 'center',
             editable: false,
         },
+        
+        {
+            field: 'Editar',
+            headerName: 'Editar',
+            type: 'number',
+            flex: 1,
+            headerAlign: 'center',
+            align: 'center',
+            renderCell: (params) => {
+                return (
+                    <IconButton 
+                    className= "icon-edit"
+                    icon={<EditIcon sx={{ color: '##0d1b2a' }} />}
+                    onClick={() => navigate('/admincasa/editar')} />
+                );
+            }
+        }
     ];
 
     const rows = [
@@ -79,7 +97,6 @@ function AdminCasa() {
                 <h1 className='title'>Administrar Casas</h1>
 
                 <div className="text-field">
-                    <SelectTextFields />
                     <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' onClick={() => navigate('/admincasa/agregar-eliminar')} />
                 </div>
 

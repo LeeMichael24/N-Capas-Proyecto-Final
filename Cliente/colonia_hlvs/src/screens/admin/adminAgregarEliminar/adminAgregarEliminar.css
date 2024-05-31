@@ -8,6 +8,6 @@
   .agregar {
     display: flex;
     flex-direction: column;
-    align-items: start; /* Alinea los elementos a la izquierda */
-    gap: 10px; /* Espacio entre los elementos */
+    align-items: start; 
+    gap: 10px;
   }

@@ -12,6 +12,7 @@ import AdminCasa from './screens/admin/adminCasa/adminCasa';
 import AgregarEliminar from './screens/admin/adminAgregarEliminar/adminAgregarEliminar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import EditarInfoCasa from './screens/admin/editarInfoCasa/editarInfoCasa';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -40,6 +41,8 @@ function App() {
           <Route path="admin" element={<AdminHome />} />
           <Route path="admincasa" element={<AdminCasa />} />
           <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
+          <Route path="admincasa/editarinfo" element={<EditarInfoCasa />} />☻
+
 
 
 

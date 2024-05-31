@@ -39,3 +39,15 @@
     display: flex;
     justify-content: center;
 }
+
+.icon-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #0d1b2a;
+    width: 10%;
+    height: 100%;
+    border: none;
+    margin: auto;
+  }

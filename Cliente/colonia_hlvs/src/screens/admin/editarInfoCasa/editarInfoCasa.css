@@ -1,0 +1,81 @@
+.info-casa-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+
+  }
+  
+  .CardContent {
+    width: 100%; 
+  }
+  
+  .casa-edit {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 2%; /* Esto agregará espacio entre los elementos */
+  }
+  
+  /* Ajusta el espacio cuando la pantalla es más pequeña */
+  @media (max-width: 768px) {
+    .casa-edit {
+      gap: 5%; /* Aumenta esto para agregar más espacio cuando la pantalla es más pequeña */
+    }
+  }
+
+  .casa-info {
+    display: flex;
+    padding-left:20px;
+    padding-top: 20px;
+  }
+
+  .icon-edit-info {
+    padding: 1px;
+    display: flex; 
+    background-color: white;
+    color: var(--bg-login);
+    justify-content: center; 
+    align-items: center; 
+    border: none;
+    
+  }
+
+
+
+
+  .info-casa-container-residentes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+
+  }
+
+  .casa-info-responsable-tabla{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    
+  }
+
+ .casa-edit-residentes{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ p{
+    font-weight: bold;
+    font-size: 18px;
+ }
