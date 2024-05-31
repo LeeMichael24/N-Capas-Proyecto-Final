@@ -1,5 +1,5 @@
 .card-container{
-    width: 450px;
+    width: 340px;
     height: auto;
     border-radius: 28px;
     background-color: var(--accent);
@@ -10,15 +10,17 @@
     
 }
 .card-container h1{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
+    text-align: start;
 }
 .card-container h2{
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
+    text-align: start;
 }
 .text{
-    font-size: 19px;
+    font-size: 17px;
 }
 
 .dia-container{

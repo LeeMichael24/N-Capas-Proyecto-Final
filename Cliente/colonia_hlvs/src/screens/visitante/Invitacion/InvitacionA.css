@@ -1,58 +1,71 @@
-.invitadoHome {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  
-  .left-container{
-    width: 60%;
-    align-items: center;
-    margin-bottom: 40px;
-    text-align: start;
-  }
-  
-  .h1-visitante{
-    margin-bottom: 40px;
-  }
-  
-    
-  .rigt-container{
-    position: fixed;
-    top: 42%;
-    left: calc(55%);
-    width: 50%;
-    display: grid;
-    align-content: center;
-    margin: 0 auto;
-    text-align: center;
-    justify-self: center;
-    justify-content: center;
-  }
-  
-  .extra-button {
-    display: block;
-    margin: 20px auto 0; /* Centrar el botón y añadir margen superior */
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 50px;
-  }
-  
-  .extra-button:hover {
-    background-color: #0056b3;
-  }
+.invitacionA-home {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.invitacionA-left-container {
+  min-width: 65%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .button-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+.invitacionA-h1-visitante {
+  margin-bottom: 40px;
+}
+
+.invitacionA-card-style-mt {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.invitacionA-right-container {
+  display: flex;
+  min-width: 35%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.invitacionA-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.invitacionA-extra-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 50px;
+}
+
+.invitacionA-extra-button:hover {
+  background-color: #0056b3;
+}
+
+.invitacionA-button-container a {
+  font-size: 20px;
+}
+
+/* Media Queries para hacer la vista responsive */
+@media (max-width: 768px) {
+  .invitacionA-home {
+    flex-direction: column;
   }
-  .button-container a{
-    font-size: 20px;
-  }
+}

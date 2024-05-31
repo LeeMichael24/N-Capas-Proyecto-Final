@@ -2,37 +2,44 @@
   display: flex;
   height: 100vh;
   width: 100%;
+  box-sizing: border-box;
 }
 
-
-.left-container{
-  width: 60%;
-  align-items: center;
-  margin-bottom: 40px;
-  text-align: start;
-}
-
-.h1-visitante{
-  margin-bottom: 40px;
-}
-
-  
-.rigt-container{
-  position: fixed;
-  top: 42%;
-  left: calc(55%);
-  width: 50%;
-  display: grid;
-  align-content: center;
-  margin: 0 auto;
-  text-align: center;
-  justify-self: center;
+.left-container {
+  min-width: 65%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+.h1-visitante {
+  margin-bottom: 40px;
+}
+
+.card-style-mt {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container {
+  display: flex;
+  min-width: 35%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+/* Estilos adicionales para el botón */
 .extra-button {
   display: block;
-  margin: 20px auto 0; /* Centrar el botón y añadir margen superior */
+  margin: 20px auto 0;
   padding: 10px 20px;
   background-color: #007BFF;
   color: white;
@@ -45,3 +52,11 @@
 .extra-button:hover {
   background-color: #0056b3;
 }
+
+
+@media (max-width: 768px) {
+  .invitadoHome {
+    flex-direction: column;
+  }
+}
+

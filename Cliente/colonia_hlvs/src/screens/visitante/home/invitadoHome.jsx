@@ -1,15 +1,15 @@
-import "./invitadoHome.css";
 import { useNavigate } from "react-router-dom";
 import Menu from "../../../components/menu/menu";
 import Navbar from "../../../components/navbar/navbar";
 import CardDetail from "../../../components/cards/cardDetail/cardDetail";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import "./invitadoHome.css";
 
 
 function InvitadoHome() {
     const buttons = [
-        { icon: <PersonRoundedIcon/>, name: 'Mi perfil', path: 'profileVisitante' },
+        { icon: <PersonRoundedIcon/>, name: 'Mi perfil', path: '/profileVisitante' },
         { icon: <LogoutRoundedIcon/>, name: 'Cerrar sesión', path: '/login' },
     ];
 
@@ -44,7 +44,7 @@ function InvitadoHome() {
                         ))}
                     </div>
                 </div>
-                <div className="rigt-container">
+                <div className="right-container">
                     <Menu buttons={buttons} />
                 </div>
             </div>

@@ -1,0 +1,89 @@
+.profileVisitante-home {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  }
+  
+  .profileVisitante-left-container {
+    min-width: 65%;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .profileVisitante-right-container {
+    display: flex;
+    min-width: 35%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+  }
+  
+  .profileVisitante-box-container {
+    background: var(--accent);
+    padding: 1rem;
+    border-radius: 20px;
+    width: 35vh;
+  }
+  
+  .profileVisitante-text-field {
+    background: white;
+  }
+  
+  .profileVisitante-hint {
+    display: flex;
+    font-size: var(--hint-font-size);
+    background-color: var(--accent);
+    margin-top: 2rem;
+    font-weight: normal;
+    padding: 1rem;
+    width: 35vh;
+    flex-flow: row;
+    align-items: center;
+    text-align: left;
+    border-radius: var(--rad);
+    margin-bottom: 15px;
+  }
+  
+  .profileVisitante-hint .profileVisitante-icon {
+    margin-right: 20px;
+  }
+  
+  .profileVisitante-button-save {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--button-accent);
+    border: none;
+    color: white;
+    width: 200px;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  
+  .profileVisitante-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .profileVisitante-button-container a {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .profileVisitante-home {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      justify-content: center;
+      justify-items: center;
+      min-width: 300px;
+    }
+  }
+  

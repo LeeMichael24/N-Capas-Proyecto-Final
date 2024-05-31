@@ -3,7 +3,7 @@ import CardDetail from "../../../components/cards/cardDetail/cardDetail";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Menu from "../../../components/menu/menu";
-import "./InvitacionA.css";
+import "./invitacionA.css";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import IconButton from '../../../components/buttons/IconButton/IconButton';
 import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
 
 const buttons = [
-  { icon: <PersonRoundedIcon/>, name: "Mi perfil", path: "profileVisitante" },
+  { icon: <PersonRoundedIcon/>, name: "Mi perfil", path: "/profileVisitante" },
   { icon: <LogoutRoundedIcon/>, name: "Cerrar sesión", path: "/login" },
 ];
 
@@ -32,7 +32,6 @@ function InvitacionA() {
     setSelectedCard(card);
   }, [id]);
 
-  /* Esto es para mienstras JOSE lo hara */
   function handlerQR() {
     navigate('/my-qr');
   }
@@ -40,10 +39,10 @@ function InvitacionA() {
   return (
     <>
       <Navbar />
-      <div className="invitadoHome">
-        <div className="left-container">
-          <h1 className="h1-visitante">Invitación a:</h1>
-          <div className="card-style-mt">
+      <div className="invitacionA-home">
+        <div className="invitacionA-left-container">
+          <h1 className="invitacionA-h1-visitante">Invitación a:</h1>
+          <div className="invitacionA-card-style-mt">
             {selectedCard && (
               <>
                 <CardDetail
@@ -53,14 +52,14 @@ function InvitacionA() {
                   time={selectedCard.time}
                   isSelected={true}
                 />
-                <div className="button-container">
+                <div className="invitacionA-button-container">
                   <IconButton icon={<QrCode2RoundedIcon />} text="Generar QR" onClick={handlerQR} />
                 </div>
               </>
             )}
           </div>
         </div>
-        <div className="rigt-container">
+        <div className="invitacionA-right-container">
           <Menu buttons={buttons} />
         </div>
       </div>
