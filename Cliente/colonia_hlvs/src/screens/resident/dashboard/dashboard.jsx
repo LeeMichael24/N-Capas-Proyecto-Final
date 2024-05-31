@@ -21,7 +21,7 @@ function dashboard() {
       name: "Invitacion Recurrente",
       path: "/invitacion-recurrente",
     },
-    { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/admin" },
+    { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
     { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
   ];
 

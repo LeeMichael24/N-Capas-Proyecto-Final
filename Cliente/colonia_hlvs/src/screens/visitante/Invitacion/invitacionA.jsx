@@ -3,7 +3,7 @@ import CardDetail from "../../../components/cards/cardDetail/cardDetail";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Menu from "../../../components/menu/menu";
-import "./invitacionA.css";
+import "./InvitacionA.css";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { useNavigate } from "react-router-dom";

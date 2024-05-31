@@ -12,6 +12,7 @@ import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
 import ProfileVisitante from './screens/visitante/profile/profileVisitante';
 import HomeVigilante from './screens/vigilante/home/homeVigilante';
+import Profile from './screens/resident/profile/profile';
 
 
 /* const ROLES = {
@@ -40,6 +41,7 @@ function App() {
         <Route path="admin" element={<AdminHome/>} />
         <Route path="admincasa" element={<AdminCasa/>} />
         <Route path="profileVisitante" element={<ProfileVisitante/>} />
+        <Route path="myprofile" element={<Profile/>} />
 
         {/* vigilante */}
         <Route path="vigilanteHome" element={<HomeVigilante/>} />

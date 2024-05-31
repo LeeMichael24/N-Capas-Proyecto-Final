@@ -31,7 +31,7 @@ function RecurrntInvitation() {
 
     const buttonsVisit = [{icon: <InsertInvitationRoundedIcon/> , name: 'Invitacion Simple', path:'/invitacion-simple'},
     {icon: <EventRepeatRoundedIcon/> , name: 'Invitacion Recurrente', path:'/invitacion-recurrente'},
-    {icon: <PersonRoundedIcon/> , name: 'Mi perfil', path:'/admin'},
+    {icon: <PersonRoundedIcon/> , name: 'Mi perfil', path:'/myprofile'},
     {icon: <LogoutRoundedIcon/> , name: 'Cerrar Sesion', path:'/'},]
 
     return(
