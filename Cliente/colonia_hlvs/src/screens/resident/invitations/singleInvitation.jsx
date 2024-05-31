@@ -1,5 +1,8 @@
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import Menu from '../../../components/menu/menu';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //MUI
 import { TextField } from '@mui/material';
@@ -17,6 +20,14 @@ import'./Invitation.css';
 function SingleInvitation(){
     // const [selectedDate, handleDateChange] = useState(new Date());
 
+    const notify = () => {
+        console.log('Invitacion solicitada con exito')
+        toast.success("Invitacion solicitada con exito", {
+            position: "top-right",
+            closeOnClick: true
+        });
+    };
+
     const buttonsVisit = [{icon: <InsertInvitationRoundedIcon/> , name: 'Invitacion Simple', path:'/invitacion-simple'},
     {icon: <EventRepeatRoundedIcon/> , name: 'Invitacion Recurrente', path:'/invitacion-recurrente'},
     {icon: <PersonRoundedIcon/> , name: 'Mi perfil', path:'/admin'},
@@ -24,6 +35,7 @@ function SingleInvitation(){
 
     return(
         <div className='father'>
+            <ToastContainer/>
             <div className='Left'>
                 <h2>Solicitar invitacion unica</h2>
                 <TextField
@@ -44,7 +56,7 @@ function SingleInvitation(){
                         className='time input'/>
                     </LocalizationProvider>
                 </div>
-                <IconButton icon={null} text={'Solicitar Invitacion'} />
+                <IconButton icon={null} text={'Solicitar Invitacion'} onClick={notify}/>
             </div>
             <div className='Right'>
                 <Menu buttons={buttonsVisit} className='funca'/>

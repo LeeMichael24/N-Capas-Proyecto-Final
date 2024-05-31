@@ -80,7 +80,7 @@ h4{
         flex-direction: column; 
 
         .Left{
-            min-height: 40vh;
+            min-height: 50vh;
             max-height: 70vh;
             box-sizing: border-box;
         }
@@ -88,7 +88,8 @@ h4{
             display: none;
         }
         #stay{
-            height: auto;
+            height: max-content + 20px;
+            max-height: 60vh;
         }
     }
 }
