@@ -11,6 +11,8 @@ import RecurrntInvitation from './screens/resident/invitations/recurrentInvitati
 import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
 import ProfileVisitante from './screens/visitante/profile/profileVisitante';
+import HomeVigilante from './screens/vigilante/home/homeVigilante';
+
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -30,7 +32,7 @@ function App() {
         {/* public routes */}
         <Route path="login" element={<Login />} />
         <Route path="invitadoHome" element={<InvitadoHome />} />
-        <Route path='/invitacion/:id' element={<InvitacionA />} />
+        <Route path='invitacion/:id' element={<InvitacionA />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="my-qr" element={<ResidentQr />} />
         <Route path="invitacion-simple" element={<SingleInvitation />} />
@@ -38,6 +40,9 @@ function App() {
         <Route path="admin" element={<AdminHome/>} />
         <Route path="admincasa" element={<AdminCasa/>} />
         <Route path="profileVisitante" element={<ProfileVisitante/>} />
+
+        {/* vigilante */}
+        <Route path="vigilanteHome" element={<HomeVigilante/>} />
 
 
         {/* we want to protect these routes */}

@@ -16,9 +16,9 @@ const buttons = [
 ];
 
 const data = [
-  { id: 1, title: "34", date: "04/20/24", time: "14:30" },
-  { id: 2, title: "48", date: "05/20/24", time: "14:34" },
-  { id: 3, title: "83", date: "02/20/24", time: "14:40" },
+    { id: 1, title: '34', date: '04/20/24', time: '14:30' },
+    { id: 2, title: '48', date: '05/20/24', time: '14:34' },
+    { id: 3, title: '83', date: '02/20/24', time: '14:40' },
 ];
 
 function InvitacionA() {

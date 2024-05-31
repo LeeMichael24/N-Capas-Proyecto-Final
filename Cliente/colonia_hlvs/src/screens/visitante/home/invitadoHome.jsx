@@ -13,6 +13,7 @@ function InvitadoHome() {
         { icon: <LogoutRoundedIcon/>, name: 'Cerrar sesión', path: '/login' },
     ];
 
+
     const Data = [
         { id: 1, title: '34', date: '04/20/24', time: '14:30' },
         { id: 2, title: '48', date: '05/20/24', time: '14:34' },
