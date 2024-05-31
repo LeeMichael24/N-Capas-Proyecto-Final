@@ -49,7 +49,7 @@ function RecurrntInvitation() {
                     <DatePicker className='longText input' label='Fecha Fin'/>
                 </LocalizationProvider>
                 <div className='days'>
-                    <p>Especifique los dias</p>
+                    <p className='days_helper'>Especifique los dias</p>
                     <DayButton text={'L'}/>
                     <DayButton text={'M'}/>
                     <DayButton text={'M'}/>
