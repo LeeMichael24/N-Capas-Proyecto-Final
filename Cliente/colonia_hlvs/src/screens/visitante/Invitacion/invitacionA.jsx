@@ -4,14 +4,15 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Menu from "../../../components/menu/menu";
 import "./InvitacionA.css";
-import testPic from "../../../assets/react.svg"
+import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import { useNavigate } from "react-router-dom";
+import IconButton from '../../../components/buttons/IconButton/IconButton';
+import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
 
 const buttons = [
-  { icon: `${testPic}`, name: "Mi perfil", path: "/mi-perfil" },
-  { icon: `${testPic}`, name: "Cerrar sesión", path: "/login" },
-  { icon: `${testPic}`, name: "Cerrar sesión", path: "/cerrar-sesion" },
-  { icon: `${testPic}`, name: "Cerrar sesión", path: "/cerrar-sesion" },
-  { icon: `${testPic}`, name: "Cerrar sesión", path: "/cerrar-sesion" },
+  { icon: <PersonRoundedIcon/>, name: "Mi perfil", path: "profileVisitante" },
+  { icon: <LogoutRoundedIcon/>, name: "Cerrar sesión", path: "/login" },
 ];
 
 const data = [
@@ -23,11 +24,18 @@ const data = [
 function InvitacionA() {
   const { id } = useParams();
   const [selectedCard, setSelectedCard] = useState(null);
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const card = data.find((item) => item.id === parseInt(id));
     setSelectedCard(card);
   }, [id]);
+
+  /* Esto es para mienstras JOSE lo hara */
+  function handlerQR() {
+    navigate('/my-qr');
+  }
 
   return (
     <>
@@ -45,7 +53,9 @@ function InvitacionA() {
                   time={selectedCard.time}
                   isSelected={true}
                 />
-                <button className="extra-button">Generar Código QR</button>
+                <div className="button-container">
+                  <IconButton icon={<QrCode2RoundedIcon />} text="Generar QR" onClick={handlerQR} />
+                </div>
               </>
             )}
           </div>

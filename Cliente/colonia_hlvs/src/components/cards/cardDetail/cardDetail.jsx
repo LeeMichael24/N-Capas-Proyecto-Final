@@ -15,11 +15,11 @@ function CardDetail({ title, date, time, onClick, isSelected }) {
         <div className="down-container">
           <div className="dia-container">
             <h2>Dia:</h2>
-            <div>{date}</div>
+            <div className="text">{date}</div>
           </div>
           <div>
             <h2>Hora:</h2>
-            <div>{time}</div>
+            <div className="text">{time}</div>
           </div>
         </div>
       </div>

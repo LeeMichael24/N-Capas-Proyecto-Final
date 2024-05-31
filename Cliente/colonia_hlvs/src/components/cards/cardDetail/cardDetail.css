@@ -2,8 +2,8 @@
     width: 450px;
     height: auto;
     border-radius: 28px;
-    background-color: rgb(31, 228, 31);
-    padding: 0.5rem;
+    background-color: var(--accent);
+    padding: 1.1rem;
     margin-bottom: 1rem;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,10 @@
 }
 .card-container h2{
     font-size: 19px;
-    font-weight: 200;
+    font-weight: 400;
+}
+.text{
+    font-size: 19px;
 }
 
 .dia-container{
@@ -23,7 +26,7 @@
 }
 
 .contentCard{
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
 .down-container{

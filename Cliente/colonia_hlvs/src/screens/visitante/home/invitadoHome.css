@@ -18,6 +18,9 @@
 
   
 .rigt-container{
+  position: fixed;
+  top: 42%;
+  left: calc(55%);
   width: 50%;
   display: grid;
   align-content: center;
