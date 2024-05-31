@@ -1,17 +1,18 @@
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import Navbar from '../../../components/navbar/navbar';
-import CardDetail from '../../../components/cards/cardDetail/cardDetail';
-import Menu from '../../../components/menu/menu';
-import PersonIcon from '@mui/icons-material/Person';
-import LogoutIcon from '@mui/icons-material/Logout';
-import QrCodeIcon from '@mui/icons-material/QrCode'; // Importar el icono de código QR de @mui/icons-material
-import './InvitacionA.css';
+import Navbar from "../../../components/navbar/navbar";
+import CardDetail from "../../../components/cards/cardDetail/cardDetail";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Menu from "../../../components/menu/menu";
+import "./invitacionA.css";
+import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import { useNavigate } from "react-router-dom";
+import IconButton from '../../../components/buttons/IconButton/IconButton';
+import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
 
 const buttons = [
-    { icon: <PersonIcon />, name: 'Mi Perfil', path: '/cerrar-sesion' },
-    { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
+  { icon: <PersonRoundedIcon/>, name: "Mi perfil", path: "/profileVisitante" },
+  { icon: <LogoutRoundedIcon/>, name: "Cerrar sesión", path: "/login" },
 ];
 
 const data = [
@@ -21,61 +22,49 @@ const data = [
 ];
 
 function InvitacionA() {
-    const { id } = useParams();
-    const [selectedCard, setSelectedCard] = useState(null);
-    const [modalOpen, setModalOpen] = useState(false);
+  const { id } = useParams();
+  const [selectedCard, setSelectedCard] = useState(null);
+  const navigate = useNavigate();
+  
 
-    useEffect(() => {
-        const card = data.find((item) => item.id === parseInt(id));
-        setSelectedCard(card);
-    }, [id]);
+  useEffect(() => {
+    const card = data.find((item) => item.id === parseInt(id));
+    setSelectedCard(card);
+  }, [id]);
 
-    const openModal = () => {
-        setModalOpen(true);
-    };
+  function handlerQR() {
+    navigate('/my-qr');
+  }
 
-    const closeModal = () => {
-        setModalOpen(false);
-    };
-
-    return (
-        <>
-            <Navbar />
-            <div className="invitadoHome">
-                <div className="left-container">
-                    <h1 className="h1-visitante">Invitación a:</h1>
-                    <div className="card-style-mt">
-                        {selectedCard && (
-                            <>
-                                <CardDetail
-                                    key={selectedCard.id}
-                                    title={selectedCard.title}
-                                    date={selectedCard.date}
-                                    time={selectedCard.time}
-                                    isSelected={true}
-                                />
-                                <button className="extra-button" onClick={openModal}>Generar Código QR</button>
-                            </>
-                        )}
-                    </div>
+  return (
+    <>
+      <Navbar />
+      <div className="invitacionA-home">
+        <div className="invitacionA-left-container">
+          <h1 className="invitacionA-h1-visitante">Invitación a:</h1>
+          <div className="invitacionA-card-style-mt">
+            {selectedCard && (
+              <>
+                <CardDetail
+                  key={selectedCard.id}
+                  title={selectedCard.title}
+                  date={selectedCard.date}
+                  time={selectedCard.time}
+                  isSelected={true}
+                />
+                <div className="invitacionA-button-container">
+                  <IconButton icon={<QrCode2RoundedIcon />} text="Generar QR" onClick={handlerQR} />
                 </div>
-                <div className="right-container">
-                    <Menu buttons={buttons} />
-                </div>
-            </div>
-            <Dialog open={modalOpen} onClose={closeModal}>
-                <DialogTitle>Generar Código QR</DialogTitle>
-                <DialogContent>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <QrCodeIcon style={{ fontSize: 100 }} /> {/* Utilizar el icono de código QR */}
-                    </div>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={closeModal}>Cerrar</Button>
-                </DialogActions>
-            </Dialog>
-        </>
-    );
+              </>
+            )}
+          </div>
+        </div>
+        <div className="invitacionA-right-container">
+          <Menu buttons={buttons} />
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default InvitacionA;

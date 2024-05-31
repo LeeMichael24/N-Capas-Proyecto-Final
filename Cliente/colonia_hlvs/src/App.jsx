@@ -10,7 +10,9 @@ import SingleInvitation from './screens/resident/invitations/singleInvitation';
 import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
 import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
+import ProfileVisitante from './screens/visitante/profile/profileVisitante';
 import HomeVigilante from './screens/vigilante/home/homeVigilante';
+
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -37,6 +39,7 @@ function App() {
         <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
         <Route path="admin" element={<AdminHome/>} />
         <Route path="admincasa" element={<AdminCasa/>} />
+        <Route path="profileVisitante" element={<ProfileVisitante/>} />
 
         {/* vigilante */}
         <Route path="vigilanteHome" element={<HomeVigilante/>} />
