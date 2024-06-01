@@ -3,33 +3,44 @@ import "./homeVigilante.css";
 import Box from "@mui/material/Box";
 import Navbar from "../../../components/navbar/navbar";
 import { Html5QrcodeScanner } from "html5-qrcode";
-/* import ConfirmationView from "../../../components/estados/Confirmacion/ConfirmationView";
-import DeniedView from "../../../components/estados/Denegado/DeniedView"; */
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import { useEffect, useState } from "react";
 
 const HomeVigilante = () => {
-  const [scanResult, setscanResult] = useState(null);
+  const [scanResult, setScanResult] = useState(null);
+  const [isScanning, setIsScanning] = useState(false);
+
+  const success = (result) => {
+    setScanResult(result);
+    setIsScanning(false);
+  }
+
+  const error = (err) => {
+    console.warn(err);
+  }
 
   useEffect(() => {
-    const scanner = new Html5QrcodeScanner("reader", {
-      qrbox: {
-        width: 250,
-        height: 250,
-      },
-      fps: 5,
-    });
+    if (isScanning) {
+      const scanner = new Html5QrcodeScanner("reader", {
+        qrbox: {
+          width: 150,
+          height: 150,
+        },
+        fps: 5,
+      });
 
-    scanner.render(success, error);
+      scanner.render(success, error);
 
-    function success(result) {
-      scanner.clear();
-      setscanResult(result);
+      return () => {
+        scanner.clear();
+      }
+
     }
-    function error(err) {
-      console.warn(err);
-    }
-  }, []);
+  }, [isScanning]);
+
+  const handleScanClick = () => {
+    setIsScanning(true);
+  };
 
   return (
     <div className="containerMain">
@@ -37,16 +48,18 @@ const HomeVigilante = () => {
       <div className="container-vigi">
         <div className="qr-scanner-container">
           <h2 className="h2-qr">Escanear QR</h2>
-          <div id="reader">
+          <div id="reader" className="qr-container-reader">
             {scanResult ? (
               <div>
-                {" "}
-                Success: <a href={'http://' + scanResult}> {scanResult}/</a>
+                Success: <a href={"http://" + scanResult}>{scanResult}</a>
               </div>
             ) : (
-              <div id="reader"></div>
+              !isScanning && (
+                <div className="qr-icon-container" onClick={handleScanClick}>
+                  <QrCodeScannerIcon className="qr-vigilante" />
+                </div>
+              )
             )}
-            <QrCodeScannerIcon className="qr-vigilante" />
           </div>
         </div>
         <div className="login-form-container">
@@ -78,7 +91,7 @@ const HomeVigilante = () => {
             </div>
           </Box>
 
-          <button className="btn-vigilate"> Registrar </button>
+          <button className="btn-vigilate">Registrar</button>
         </div>
       </div>
     </div>
