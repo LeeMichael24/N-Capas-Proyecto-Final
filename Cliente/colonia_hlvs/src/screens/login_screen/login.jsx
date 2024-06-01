@@ -10,7 +10,7 @@ export default function Login() {
     const navigate = useNavigate('');
 
     const handleSubmit = () => {
-        navigate('/invitadoHome');
+        navigate('/vigilanteHome');
     }
 
     /* const { handleGoogleLogin } = useUserContext(); */
