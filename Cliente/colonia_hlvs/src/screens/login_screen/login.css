@@ -1,4 +1,4 @@
-.main-container{
+.main-container-login{
     display: flex;
     margin: 0 auto;
     height: 100%;
@@ -8,36 +8,59 @@
 }
 
 
-    /* Left Side START*/
-.leftSide{
+/* Left Side START */
+.leftSide {
+    position: relative;
     width: 55%;
     height: 100vh;
-    margin: 0 auto;
-    align-items: center;
     padding: 0;
     align-content: center;
-
-    /* BG de la imagen */
-    background-image: url('../../assets/images/bg-houses.jpg');
-    filter: brightness(0.7);
-    background-position: 50% 50%;
-    background-size: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.left-container{
+.leftSide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/images/bg-houses.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: brightness(0.6); /* Aplica el filtro aquí */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+}
+
+.left-container-login {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
     text-align: center;
     justify-content: center;
-
-    margin-top: -40px;
+    align-items: center;
+    margin-top: 20%;
 }
 
-.h1-login{
+.image-left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: auto;
+}
+
+.h1-login-left {
     font-size: 34px;
     color: var(--text-inverted);
+    margin-bottom: -60px;
 }
+
     /* Left Side END*/
 
 
@@ -48,17 +71,20 @@
     padding: 0;
     text-align: center;
     align-content: center;
-    margin: 0 auto;
+    display: flex;
     align-items: center;
-
-    background-color: var(--bg-login);
+    justify-content: center;
 }
 
-.rigth-container{
-    margin: 0 auto;
-    align-items: center;
+.rigth-container-login{
     padding: 0;
     justify-content: center;
+    width: 400px;
+}
+
+.h1-login{
+    font-size: 34px;
+    color: var(--text-inverted);
 }
 
 .h3-copy{
@@ -67,12 +93,98 @@
     margin-top: 50px;
 }
 
-.btn-google{
+.btn-google {
     border: none;
     border-radius: 10px;
-    padding: 0.5rem;
+    padding: 0.4rem;
     margin-top: 10px;
-}
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically (optional) */
+    text-align: center; /* Center text horizontally */
+    margin: 0 auto;
+    background-color: var(--text-inverted);
+    color: var(--text);
+    gap: 0.8rem;
+    margin-top: 30px;
+  
+    .colorGoogle {
+      color: red;
+
+    }
+    .h3Google{
+        font-size: 13px;
+        color: var(--text);
+        margin-left: 10px;
+        margin-right: 30px;
+        font-weight: 400;
+    }
+  }
+
+  .colorGoogle::hover {
+    color: greenyellow;
+  }
+
+  .btn-google:hover{
+      background-color: greenyellow;
+  }
+
     /* Rigth Side END */
+    @media (min-width: 768px) {
+        .image-rigth-container{
+            display: none;
+        }
+        .h1-login-rigth{
+            display: none;
+        }
+        .rigthSide{
+            background-color: var(--bg-login);
+        }
+    }
+    
+    /* Media query for mobile devices (max-width 768px) */
+    @media (max-width: 768px) {
+        .main-container-login{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100vh;
 
+            .leftSide{
+                display: none;
+            }
+            .rigthSide{
+                position: relative;
+                overflow: hidden;
+                width: 100%;
 
+                .h1-login{
+                    display: none;
+                }
+                .h1-login-rigth{
+                    color: var(--text-inverted);
+                    font-size: 29px;
+                    margin-bottom: -40px;
+                }
+                .image-rigth-container{
+                    margin-left: 4px;
+                    width: 240px;
+                    margin-bottom: 10px;
+                }
+            }
+            .rigthSide::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../../assets/images/bg-houses.jpg');
+                background-position: 50% 50%;
+                background-size: cover;
+                filter: brightness(0.6); /* Aplica el filtro aquí */
+                z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+
+            }
+        }
+    }

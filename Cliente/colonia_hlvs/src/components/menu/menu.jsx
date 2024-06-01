@@ -2,6 +2,7 @@
 import ButtonMenu from './menuButtom/menuButtom';
 import './menu.css'; // Asegúrate de definir estilos aquí
 import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Menu = ({ buttons }) => {
 	/* funcion para medir el espacio y contener los botones, segun los que genere */
@@ -22,6 +23,16 @@ const Menu = ({ buttons }) => {
 	}, [buttons]);
 
   const isSingleButton = buttons.length === 1; // Verificar si hay solo un botón
+
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleButtonClick = (path) => {
+    navigate(path);
+  };
+
+
   return (
     <div className="menu-container" style={{ height: containerHeight}}>
       {buttons.map((button, index) => (
@@ -31,6 +42,8 @@ const Menu = ({ buttons }) => {
           name={button.name}
           path={button.path}
           isSingleButton={isSingleButton}
+          className={`menu-button ${location.pathname === button.path ? 'selected' : ''}`}
+          onClick={() => handleButtonClick(button.path)}
         />
       ))}
     </div>

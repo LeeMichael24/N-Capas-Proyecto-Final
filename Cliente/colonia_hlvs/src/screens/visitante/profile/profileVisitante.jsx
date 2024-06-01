@@ -9,6 +9,7 @@ import { blue } from "@mui/material/colors";
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import QrCodeIcon from '@mui/icons-material/QrCode';
 import "./profileVisitante.css";
+import { useLocation ,useNavigate } from "react-router-dom";
 
 const buttons = [
   { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/profileVisitante" },
