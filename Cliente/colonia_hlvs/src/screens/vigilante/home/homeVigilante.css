@@ -25,11 +25,17 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+.qr-vigilante{
+  font-size: 15rem !important;
+}
+.qr-container-reader{
+  width: 350px;
+  height: auto;
+  margin: 0 auto;
 }
 
-/* .css-i4bv87-MuiSvgIcon-root{
-  font-size: 20rem !important;
-} */
 .login-form-container{
   text-align: center;
   justify-content: center;
