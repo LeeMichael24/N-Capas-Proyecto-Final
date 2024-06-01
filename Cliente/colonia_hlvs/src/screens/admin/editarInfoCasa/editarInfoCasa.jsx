@@ -6,17 +6,19 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import { TextField } from '@mui/material';
 import { useState } from 'react';
-
 import DataGridDemo from '../../../components/table/table';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+
+
 
 
 
@@ -24,10 +26,10 @@ function EditarInfoCasa() {
 
     const [editMode, setEditMode] = useState(false);
     const [residente, setResidente] = useState('Mauricio Aguilar');
-    const [capacidad, setCapacidad] = useState('3 personas');
-    const [residentes, setResidentes] = useState([
-        // Tus datos iniciales de los residentes van aquí
-    ]);
+    const [capacidad, setCapacidad] = useState('3');
+
+    const [tempCapacidad, setTempCapacidad] = useState(capacidad);
+    const [nuevoResidente, setNuevoResidente] = useState('');
 
 
     const handleEditClick = () => {
@@ -37,6 +39,19 @@ function EditarInfoCasa() {
     const handleSaveClick = () => {
         setEditMode(false);
     };
+
+    const handleCapacidadChange = (event) => {
+        setTempCapacidad(Number(event.target.value));
+    };
+
+    const handleDelete = (id) => {
+        setRows(rows.map(row => row.id === id ? { ...row, Nombre: '' } : row));
+    };
+
+    const handleResidenteChange = (event) => {
+        setNuevoResidente(event.target.value);
+    };
+
 
 
     const buttons = [
@@ -67,14 +82,64 @@ function EditarInfoCasa() {
             editable: false,
         },
 
+        {
+            field: 'Eliminar',
+            headerName: '',
+            flex: 0,
+            headerAlign: 'center',
+            align: 'center',
+            renderCell: (params) => (
+                <IconButton
+                    className="icon-delete"
+                    onClick={() => handleDelete(params.row.id)}
+                    icon={<DeleteOutlineIcon sx={{ color: '#0d1b2a' }} />}>
+                </IconButton>
+            ),
+        },
     ];
 
-    const rows = [
+    const [rows, setRows] = useState([
         { id: 1, Contador: 1, Nombre: "Mauricio Aguilar", },
         { id: 2, Contador: 2, Nombre: "Daniel Quintanilla", },
         { id: 3, Contador: 3, Nombre: "Carlos Suria", },
-    ];
+    ]);
 
+    const handleSave = () => {
+        if (tempCapacidad < rows.filter(row => row.Nombre !== '').length) {
+            toast.error('No puedes reducir la capacidad porque hay residentes registrados.');
+        } else {
+            setCapacidad(tempCapacidad);
+            // Actualiza las filas de la tabla
+            if (tempCapacidad > rows.length) {
+                const newRows = Array.from({ length: tempCapacidad - rows.length }, (_, i) => ({
+                    id: rows.length + i + 1,
+                    Contador: rows.length + i + 1,
+                    Nombre: '',
+                }));
+                setRows(rows.concat(newRows));
+            } else if (tempCapacidad < rows.length) {
+                setRows(rows.slice(0, tempCapacidad));
+            }
+            setEditMode(false);
+            toast.success('Se ha guardado la información de la casa.');
+        }
+    };
+
+
+    const handleGuardarResidente = () => {
+        if (rows.filter(row => row.Nombre !== '').length >= capacidad) {
+            toast.error('No puedes agregar más residentes porque la casa está llena.');
+        } else {
+            const newRows = [...rows];
+            const firstEmptyRow = newRows.find(row => row.Nombre === '');
+            if (firstEmptyRow) {
+                firstEmptyRow.Nombre = nuevoResidente;
+                setRows(newRows);
+                setNuevoResidente('');
+                toast.success('Se ha registrado un nuevo residente.');
+            }
+        }
+    };
 
 
 
@@ -100,7 +165,7 @@ function EditarInfoCasa() {
                         </div>
 
                         <div className='casa-info-responsable'>
-                            <h2 className='casa-capacity'>Residente Responsable</h2>
+                            <h2 className='casa-responsable'>Residente Responsable</h2>
                             {editMode ? (
                                 <TextField value={residente} onChange={(e) => setResidente(e.target.value)} />
                             ) : (
@@ -109,17 +174,17 @@ function EditarInfoCasa() {
                         </div>
 
                         <div className='casa-info-capacidad'>
-                            <h2 className='casa-capacity'>Capacidad</h2>
+                            <h2 className='casa-capacity'>Capacidad de la Casa</h2>
                             {editMode ? (
-                                <TextField type='number' value={capacidad} onChange={(e) => setCapacidad(e.target.value)} />
+                                <TextField type='number' onChange={handleCapacidadChange} value={tempCapacidad} />
                             ) : (
-                                <p>{capacidad}</p>
+                                <p className='capacidad'>{capacidad} personas</p>
                             )}
                         </div>
 
                         {editMode && (
-                            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                <IconButton className="icon-save-info" text={"Guardar"} onClick={handleSaveClick} />
+                            <div style={{ paddingTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                <IconButton className="icon-save-info" text={"Guardar"} onClick={handleSave} />
                             </div>
                         )}
                     </CardContent>
@@ -143,6 +208,20 @@ function EditarInfoCasa() {
 
                     </CardContent>
 
+                </div>
+
+                <div className="agregar-residente">
+                    <CardContent className='CardContent'>
+                        <div className='casa-edit-residentes'>
+                            <h1 className='casa-title'>Agregar Residente</h1>
+                        </div>
+
+                        <div className='text-field-agregar'>
+                            <TextField id="outlined-basic" label="Nombre del Residente" variant="outlined" onChange={handleResidenteChange} value={nuevoResidente} />
+                            <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarResidente} />
+                        </div>
+
+                    </CardContent>
                 </div>
 
 

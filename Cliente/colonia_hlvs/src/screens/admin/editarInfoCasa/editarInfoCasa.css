@@ -18,15 +18,9 @@
     padding-left: 20px;
     display: flex;
     justify-content: space-between;
-    gap: 2%; /* Esto agregará espacio entre los elementos */
   }
   
-  /* Ajusta el espacio cuando la pantalla es más pequeña */
-  @media (max-width: 768px) {
-    .casa-edit {
-      gap: 5%; /* Aumenta esto para agregar más espacio cuando la pantalla es más pequeña */
-    }
-  }
+ 
 
   .casa-info {
     display: flex;
@@ -45,6 +39,21 @@
     
   }
 
+
+  .casa-info-responsable{
+    display: flex;
+    padding-bottom: 30px;    
+    padding-top: 30px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .casa-info-capacidad{
+    display: flex;   
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+  }
 
 
 
@@ -79,3 +88,39 @@
     font-weight: bold;
     font-size: 18px;
  }
+
+ .icon-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #0d1b2a;
+  width: 0;
+  height: 100%;
+  border: none;
+  margin: auto;
+}
+
+.agregar-residente{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.text-field-agregar{
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.casa-capacity{
+  margin-left: -10px;
+}

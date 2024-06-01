@@ -45,7 +45,7 @@ function AdminCasa() {
             align: 'center',
             editable: false,
         },
-        
+
         {
             field: 'Editar',
             headerName: 'Editar',
@@ -54,14 +54,16 @@ function AdminCasa() {
             headerAlign: 'center',
             align: 'center',
             renderCell: (params) => {
-                return (
-                    <IconButton 
-                    className= "icon-edit"
-                    icon={<EditIcon sx={{ color: '##0d1b2a' }} />}
-                    onClick={() => navigate('/admincasa/editar')} />
-                );
+              return (
+                params.row.Casa !== '-' && params.row.Capacidad !== '-' ? (
+                  <IconButton
+                    className="icon-edit"
+                    icon={<EditIcon sx={{ color: '#0d1b2a' }} />}
+                    onClick={() => navigate(`/admincasa/editarinfo`)} />
+                ) : null
+              );
             }
-        }
+          }
     ];
 
     const rows = [
@@ -72,9 +74,7 @@ function AdminCasa() {
         { id: 5, Contador: 5, Casa: '-', Capacidad: '-', },
         { id: 6, Contador: 6, Casa: '#6', Capacidad: 3, },
         { id: 7, Contador: 7, Casa: '#7', Capacidad: 3, },
-        { id: 8, Contador: 8, Casa: '#8', Capacidad: 3, },
-        { id: 9, Contador: 9, Casa: '#9', Capacidad: 3, },
-        { id: 10, Contador: 10, Casa: '#10', Capacidad: 3, },
+
 
     ];
 
