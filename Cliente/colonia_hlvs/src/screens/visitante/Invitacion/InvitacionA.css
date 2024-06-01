@@ -1,4 +1,4 @@
-.invitadoHome {
+.invitacionA-home {
   display: flex;
   height: 100vh;
   width: 100%;
@@ -7,7 +7,7 @@
   overflow: auto;
 }
 
-.left-container {
+.invitacionA-left-container {
   min-width: 65%;
   height: 100vh;
   display: flex;
@@ -17,11 +17,11 @@
   flex-direction: column;
 }
 
-.h1-visitante {
+.invitacionA-h1-visitante {
   margin-bottom: 40px;
 }
 
-.card-style-mt {
+.invitacionA-card-style-mt {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -29,7 +29,7 @@
   align-items: center;
 }
 
-.right-container {
+.invitacionA-right-container {
   display: flex;
   min-width: 35%;
   height: 100vh;
@@ -38,8 +38,13 @@
   background-color: aliceblue;
 }
 
-/* Estilos adicionales para el botón */
-.extra-button {
+.invitacionA-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.invitacionA-extra-button {
   display: block;
   margin: 20px auto 0;
   padding: 10px 20px;
@@ -49,16 +54,20 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 50px;
 }
 
-.extra-button:hover {
+.invitacionA-extra-button:hover {
   background-color: #0056b3;
 }
 
+.invitacionA-button-container a {
+  font-size: 20px;
+}
 
+/* Media Queries para hacer la vista responsive */
 @media (max-width: 768px) {
-  .invitadoHome {
+  .invitacionA-home {
     flex-direction: column;
   }
 }
-

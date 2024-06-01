@@ -18,4 +18,6 @@
     border-radius: 100%;
     font-size: 1.5vh;
     cursor: pointer;
+    margin: 0;
+    padding: 0%;
 }

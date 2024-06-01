@@ -28,3 +28,7 @@
   font-size: 15px;
   text-align: center;
 }
+
+.menu-button.selected {
+  background-color: var(--accent); /* Color diferente cuando el botón está seleccionado */
+}

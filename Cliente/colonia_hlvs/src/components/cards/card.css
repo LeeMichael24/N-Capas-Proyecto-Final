@@ -2,7 +2,7 @@
     width: 430px;
     height: auto;
     border-radius: 8px;
-    background-color: aqua;
+    background-color: var(--accent);
     padding: 1rem;
 }
 

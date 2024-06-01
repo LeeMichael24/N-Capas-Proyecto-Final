@@ -3,6 +3,7 @@ import Layout from './components/layout/layout';
 import Missing from './components/missing/missing';
 import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
+import InvitacionA from './screens/visitante/Invitacion/invitacionA';
 import Dashboard from './screens/resident/dashboard/dashboard';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
 import SingleInvitation from './screens/resident/invitations/singleInvitation';
@@ -13,6 +14,9 @@ import AgregarEliminar from './screens/admin/adminAgregarEliminar/adminAgregarEl
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EditarInfoCasa from './screens/admin/editarInfoCasa/editarInfoCasa';
+import ProfileVisitante from './screens/visitante/profile/profileVisitante';
+import HomeVigilante from './screens/vigilante/home/homeVigilante';
+import Profile from './screens/resident/profile/profile';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -42,13 +46,17 @@ function App() {
           <Route path="admincasa" element={<AdminCasa />} />
           <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
           <Route path="admincasa/editarinfo" element={<EditarInfoCasa />} />☻
+          <Route path="profileVisitante" element={<ProfileVisitante/>} />
+          <Route path="myprofile" element={<Profile/>} />
+
+          {/* vigilante */}
+          <Route path="vigilanteHome" element={<HomeVigilante/>} />
 
 
 
 
-
-          {/* we want to protect these routes */}
-          {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
+         {/* we want to protect these routes */}
+         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} /
           <Route path="/" element={<Home />} />
         </Route>
 

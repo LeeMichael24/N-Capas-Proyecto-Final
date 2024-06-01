@@ -1,15 +1,16 @@
-
 import './navbar.css';
+import Logo from '../../assets/images/Logo.png';
 
 function Navbar() {
+  const name = 'Jose';
   return (
     <nav className="navbar">
       <div className="logo">
       {/* falta el logo */}
-        <img src="logo.png" alt="Logo" />
+        <img className='logo-img' src={Logo} alt="Logo" />
       </div>
       <div className="welcome-message">
-        Bienvenido
+        Bienvenido: {name + '!'}
       </div>
     </nav>
   )
