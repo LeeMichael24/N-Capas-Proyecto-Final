@@ -93,6 +93,80 @@
     margin-top: 50px;
 }
 
+.login_modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: var(--rad);
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vh;
+
+    h3{
+        font-weight: 400;
+        font-size: calc(32/16*1rem);;
+    }
+    .clarification{font-weight: normal; font-size: small; padding: 10px}
+
+    .user_roles{
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        justify-content: left;
+        border-radius: var(--rad);
+        padding: 5px;
+        
+        &:hover{
+            background-color: lightgray;
+        }
+
+        .slim_button{
+            background-color: var(--text-primary);
+            border: 0;
+            padding: 5px;
+            height: fit-content;
+            width: fit-content;
+            
+            svg{
+                margin: 0%;
+            }
+        }
+
+        .user_card{
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--rad);
+            justify-content: left;
+            justify-self: left;
+            padding: 15px;
+    
+            h4{
+                font-weight: 500;
+                width: fit-content;
+                font-size: 1.2rem;
+            }
+            p{
+                font-weight: 400;
+                width: fit-content;
+                font-family: noto sans, sans-serif;
+                color: var(--text-secondary), grey;
+    
+            }
+        }
+    }
+
+}
+
 .btn-google {
     border: none;
     border-radius: 10px;
