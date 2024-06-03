@@ -13,6 +13,7 @@ const HomeVigilante = () => {
   const success = (result) => {
     setScanResult(result);
     setIsScanning(false);
+    
   }
 
   const error = (err) => {
