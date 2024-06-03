@@ -23,18 +23,13 @@ const HomeVigilante = () => {
     if (isScanning) {
       const scanner = new Html5QrcodeScanner("reader", {
         qrbox: {
-          width: 150,
-          height: 150,
+          width: 250,
+          height: 250,
         },
         fps: 5,
       });
 
       scanner.render(success, error);
-
-      return () => {
-        scanner.clear();
-      }
-
     }
   }, [isScanning]);
 
@@ -51,7 +46,7 @@ const HomeVigilante = () => {
           <div id="reader" className="qr-container-reader">
             {scanResult ? (
               <div>
-                Success: <a href={"http://" + scanResult}>{scanResult}</a>
+                Success: <a href={"http://" + scanResult}>{scanResult} Estos es una prueba</a>
               </div>
             ) : (
               !isScanning && (
