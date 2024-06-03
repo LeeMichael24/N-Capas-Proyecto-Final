@@ -11,7 +11,10 @@ import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRou
 import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+
 import { useEffect } from 'react';
+import Navbar from '../../../components/navbar/navbar';
 
 
 function ResidentQr(){
@@ -34,26 +37,32 @@ function ResidentQr(){
         handlerQrCodeChanger()
     })
 
-    const buttonsVisit = [{icon: <InsertInvitationRoundedIcon/> , name: 'Invitacion Simple', path:'/invitacion-simple'},
-    {icon: <EventRepeatRoundedIcon/> , name: 'Invitacion Recurrente', path:'/invitacion-recurrente'},
-    {icon: <PersonRoundedIcon/> , name: 'Mi perfil', path:'/myprofile'},
-    {icon: <LogoutRoundedIcon/> , name: 'Cerrar Sesion', path:'/'},]
+    const buttonsVisit = [
+        { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
+        { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
+        { icon: <EventRepeatRoundedIcon />, name: "Invitacion Recurrente", path: "/invitacion-recurrente",},
+        { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
+        { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
+      ];
 
     return (
-        <div className='father'>
-            <div className='Left'>
-                <h2> Tu codigo-QR</h2>
-                <div className='Hint'>
-                    <ErrorOutlineRoundedIcon className='icon'/>
-                    Su codigo QR se ha generado exitosamente, acerquese al escaner para ingresar.
+        <>
+            <Navbar/>
+            <div className='father'>
+                <div className='Left'>
+                    <h2> Tu codigo-QR</h2>
+                    <div className='Hint'>
+                        <ErrorOutlineRoundedIcon className='icon'/>
+                        Su codigo QR se ha generado exitosamente, acerquese al escaner para ingresar.
+                    </div>
+                    <canvas id='canvas' className='myQR'/>
+                    <IconButton icon={<QrCode2RoundedIcon/>} text='Refrescar' onClick={handlerQrCodeChanger}/>
                 </div>
-                <canvas id='canvas' className='myQR'/>
-                <IconButton icon={<QrCode2RoundedIcon/>} text='Refrescar' onClick={handlerQrCodeChanger}/>
-             </div>
-             <div className='Right'>
-                 <Menu buttons={buttonsVisit} className='funca'/>
-             </div>
-        </div>
+                <div className='Right'>
+                    <Menu buttons={buttonsVisit} className='funca'/>
+                </div>
+            </div>
+        </>
     )
 }
 

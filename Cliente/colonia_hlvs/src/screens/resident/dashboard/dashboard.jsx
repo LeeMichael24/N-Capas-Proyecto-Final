@@ -8,19 +8,14 @@ import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRou
 import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import Navbar from '../../../components/navbar/navbar';
 
 function dashboard() {
   const buttonsVisit = [
-    {
-      icon: <InsertInvitationRoundedIcon />,
-      name: "Invitacion Simple",
-      path: "/invitacion-simple",
-    },
-    {
-      icon: <EventRepeatRoundedIcon />,
-      name: "Invitacion Recurrente",
-      path: "/invitacion-recurrente",
-    },
+    { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
+    { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
+    { icon: <EventRepeatRoundedIcon />, name: "Invitacion Recurrente", path: "/invitacion-recurrente",},
     { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
     { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
   ];
@@ -31,19 +26,22 @@ function dashboard() {
   };
 
   return (
-    <div className="father" id="testDAD">
-      <div className="Left">
-        <h2> Bienvenido</h2>
-        <button className="QR_Button" onClick={handleSubmit}>
-          <QrCode2RoundedIcon className="icon" />
-          <span>Generar QR</span>
-        </button>
-        <h4> Presione el boton para generar el codigo-QR</h4>
+    <>
+      <Navbar />
+      <div className="father" id="testDAD">
+        <div className="Left">
+          <h2> Bienvenido</h2>
+          <button className="QR_Button" onClick={handleSubmit}>
+            <QrCode2RoundedIcon className="icon" />
+            <span>Generar QR</span>
+          </button>
+          <h4> Presione el boton para generar el codigo-QR</h4>
+        </div>
+        <div id="stay">
+          <Menu buttons={buttonsVisit} className="funca" />
+        </div>
       </div>
-      <div id="stay">
-        <Menu buttons={buttonsVisit} className="funca" />
-      </div>
-    </div>
+    </>
   );
 }
 
