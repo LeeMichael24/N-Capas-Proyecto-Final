@@ -52,6 +52,7 @@ function InvitacionA() {
                   time={selectedCard.time}
                   isSelected={true}
                 />
+                
                 <div className="invitacionA-button-container">
                   <IconButton icon={<QrCode2RoundedIcon />} text="Generar QR" onClick={handlerQR} />
                 </div>

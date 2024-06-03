@@ -38,6 +38,7 @@ function App() {
           {/* public routes */}
           <Route path="login" element={<Login />} />
           <Route path="invitadoHome" element={<InvitadoHome />} />
+          <Route path='/invitacion/:id' element={<InvitacionA />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="my-qr" element={<ResidentQr />} />
           <Route path="invitacion-simple" element={<SingleInvitation />} />
