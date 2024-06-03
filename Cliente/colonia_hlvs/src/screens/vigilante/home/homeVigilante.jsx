@@ -90,7 +90,6 @@ const HomeVigilante = () => {
               />
             </div>
           </Box>
-
           <button className="btn-vigilate">Registrar</button>
         </div>
       </div>

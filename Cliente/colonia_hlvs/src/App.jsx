@@ -10,10 +10,13 @@ import SingleInvitation from './screens/resident/invitations/singleInvitation';
 import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
 import AdminHome from './screens/admin/home/adminHome';
 import AdminCasa from './screens/admin/adminCasa/adminCasa';
+import AgregarEliminar from './screens/admin/adminAgregarEliminar/adminAgregarEliminar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import EditarInfoCasa from './screens/admin/editarInfoCasa/editarInfoCasa';
 import ProfileVisitante from './screens/visitante/profile/profileVisitante';
 import HomeVigilante from './screens/vigilante/home/homeVigilante';
 import Profile from './screens/resident/profile/profile';
-
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -26,29 +29,35 @@ import Profile from './screens/resident/profile/profile';
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route index element={<Login />} /> {/* por el momento de prueba queda si */}
-      
-        {/* public routes */}
-        <Route path="login" element={<Login />} />
-        <Route path="invitadoHome" element={<InvitadoHome />} />
-        <Route path='invitacion/:id' element={<InvitacionA />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="my-qr" element={<ResidentQr />} />
-        <Route path="invitacion-simple" element={<SingleInvitation />} />
-        <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
-        <Route path="admin" element={<AdminHome/>} />
-        <Route path="admincasa" element={<AdminCasa/>} />
-        <Route path="profileVisitante" element={<ProfileVisitante/>} />
-        <Route path="myprofile" element={<Profile/>} />
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Login />} /> {/* por el momento de prueba queda si */}
 
-        {/* vigilante */}
-        <Route path="vigilanteHome" element={<HomeVigilante/>} />
+          {/* public routes */}
+          <Route path="login" element={<Login />} />
+          <Route path="invitadoHome" element={<InvitadoHome />} />
+          <Route path='/invitacion/:id' element={<InvitacionA />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="my-qr" element={<ResidentQr />} />
+          <Route path="invitacion-simple" element={<SingleInvitation />} />
+          <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
+          <Route path="admin" element={<AdminHome />} />
+          <Route path="admincasa" element={<AdminCasa />} />
+          <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
+          <Route path="admincasa/editarinfo" element={<EditarInfoCasa />} />☻
+          <Route path="profileVisitante" element={<ProfileVisitante/>} />
+          <Route path="myprofile" element={<Profile/>} />
+
+          {/* vigilante */}
+          <Route path="vigilanteHome" element={<HomeVigilante/>} />
 
 
-        {/* we want to protect these routes */}
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} />}>
+
+
+         {/* we want to protect these routes */}
+         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} /
           <Route path="/" element={<Home />} />
         </Route>
 
@@ -65,10 +74,11 @@ function App() {
           <Route path="lounge" element={<Lounge />} />
         </Route> */}
 
-        {/* catch all */}
-        <Route path="*" element={<Missing />} />
-      </Route>
-    </Routes>
+          {/* catch all */}
+          <Route path="*" element={<Missing />} />
+        </Route>
+      </Routes>
+    </>
   );
 
 }

@@ -21,6 +21,11 @@ const NumberInput = React.forwardRef(function CustomNumberInput(props, ref) {
         decrementButton: {
           children: <RemoveIcon fontSize="small" />,
         },
+        input: {
+          inputProps: {
+            placeholder: "0 min"
+          }
+        }
       }}
       {...props}
       ref={ref}
@@ -28,8 +33,19 @@ const NumberInput = React.forwardRef(function CustomNumberInput(props, ref) {
   );
 });
 
-export default function QuantityInput() {
-  return <NumberInput aria-label="Quantity Input" min={5} max={60} step ={5} defaultValue={30} />;
+export default function QuantityInput({value, onChange}) {
+  return (<div>
+  <NumberInput
+    aria-label="Quantity Input"
+    min={5}
+    max={60}
+    step={5}
+    value={value}
+    onChange={onChange}
+    readOnly
+  />
+</div>
+  );
 }
 
 const blue = {
@@ -77,15 +93,14 @@ const StyledInput = styled('input')(
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 2px 4px ${
-    theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
-  };
+  box-shadow: 0px 2px 4px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0, 0.5)' : 'rgba(0,0,0, 0.05)'
+    };
   border-radius: 8px;
   margin: 0 8px;
   padding: 10px 12px;
   outline: 0;
   min-width: 0;
-  width: 4rem;
+  width: 100px;
   text-align: center;
 
   &:hover {
