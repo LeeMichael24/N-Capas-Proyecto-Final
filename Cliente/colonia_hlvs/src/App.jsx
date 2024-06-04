@@ -20,6 +20,8 @@ import ProfileVisitante from './screens/visitante/profile/profileVisitante';
 import HomeVigilante from './screens/vigilante/home/homeVigilante';
 import Profile from './screens/resident/profile/profile';
 import Registro_Entradas from './screens/residente-jefe/lista_entradas/Registro_Entradas';
+import SolicitudVisitas from './screens/residente-jefe/solicitudes/SolicitudVisitas';
+import InvitacionesJefe from './screens/residente-jefe/invitaciones_jefe/InvitacionesJefe';
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -48,6 +50,8 @@ function App() {
           <Route path="gestion-hogar" element={<GestionHogar />}/>
           <Route path="agregar-miembro" element={<AgregarMiembro />}/>
           <Route path="entradas" element={<Registro_Entradas />}/>
+          <Route path="solicitudes" element={<SolicitudVisitas />}/>
+          <Route path="lista-invitaciones" element={<InvitacionesJefe />}/>
           <Route path="admin" element={<AdminHome />} />
           <Route path="admincasa" element={<AdminCasa />} />
           <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
