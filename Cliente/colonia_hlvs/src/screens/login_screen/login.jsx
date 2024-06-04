@@ -22,7 +22,7 @@ export default function Login() {
         { name: 'Residente', path: '/dashboard', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'residente@mail.com' },
         { name: 'Encargado', path: '/dashboard', icon: <IconButton icon={<PersonRoundedIcon />}/>, mail: 'encargado@mail.com' }, // to be changed 
         { name: 'Admin', path: '/admin', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'admin@mail.com' },
-        { name: 'Vigilante', path: '/vigilanteHome', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'vigilante@getMainColorOfGraphicItem.com' },
+        { name: 'Vigilante', path: '/vigilanteHome', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'vigilante@secure.com' },
       ];
 
     const handleSubmit = () => {
