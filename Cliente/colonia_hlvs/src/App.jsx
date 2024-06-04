@@ -49,11 +49,16 @@ function App() {
           <Route path="entradas" element={<Registro_Entradas />}/>
           <Route path="solicitudes" element={<SolicitudVisitas />}/>
           <Route path="lista-invitaciones" element={<InvitacionesJefe />}/>
-          <Route path="admin" element={<AdminHome />} />
-          <Route path="admincasa" element={<AdminCasa />} />
-          <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
-          <Route path="admincasa/editarinfo" element={<EditarInfoCasa />} />☻
+          
           <Route path="profileVisitante" element={<ProfileVisitante/>} />
+
+          {/* Administrador */}
+          <Route path="admin" element={<AdminHome />} />
+          <Route path="admin/administrar-casa" element={<AdminCasa />} />
+          <Route path="admin/administrar-casa/agregar-eliminar" element={<AgregarEliminar />} />
+          <Route path="admin/administrar-casa/editarinformacion" element={<EditarInfoCasa />} />☻
+
+
 
           {/* vigilante */}
           <Route path="vigilanteHome" element={<HomeVigilante/>} />
