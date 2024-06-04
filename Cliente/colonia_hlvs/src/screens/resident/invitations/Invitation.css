@@ -59,5 +59,16 @@
             font-weight: 400;
             max-width: 6vh;
         }
+
+        .longText{
+            width: 35vh;
+        }
+        .time_pickers{
+            width: 35vh;
+
+            .time{
+                max-width: 16vh;
+            }
+        }
     }
 }
