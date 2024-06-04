@@ -1,9 +1,10 @@
 import "../dashboard/dashboard.css"
 import '../resident-qr/resident-qr.css'
 import './profile.css'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
 import Menu from '../../../components/menu/menu';
+import { toast } from "react-toastify";
 
 //mui
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
@@ -35,6 +36,22 @@ function Profile() {
         }else setTextFieldValue('') 
     }
 
+    const handleTextFieldChange = (event) => {
+      const value = event.target.value;
+      const regex = /^[0-9]{0,8}-?[0-9]{0,1}$/;
+      
+      if(regex.test(value)){
+        setTextFieldValue(value)
+      }
+    };
+
+    const notify = () => {
+      toast.success("Datos registrados con exito", {
+          position: "top-right",
+          closeOnClick: true
+      });
+  };
+
     const buttonsVisit = [
       { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
       { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
@@ -55,10 +72,10 @@ function Profile() {
                   </div>
                   <div className="dui_field">
                       <TextField className="white" label='DUI' disabled={isChecked} value={textFieldValue}
-                          onChange={(event) => {
-                              setTextFieldValue(event.target.value);
-                            }}
-                            />
+                        onChange={handleTextFieldChange}
+                        inputProps={{maxLength: 10}}
+                        placeholder="00000000-0"
+                      />
                       <FormControlLabel className="check_field"
                           value="end"
                           control={<Checkbox 
@@ -70,7 +87,7 @@ function Profile() {
                             labelPlacement="end"
                             />
                   </div>
-                  <IconButton text={'Guardar Informacion'} />
+                  <IconButton text={'Guardar Informacion'} onClick={notify}/>
               
             </div>
             <div id="stay">

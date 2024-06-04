@@ -43,7 +43,6 @@ function SingleInvitation(){
         <>
             <Navbar/>
             <div className='father'>
-                <ToastContainer/>
                 <div className='Left'>
                     <h2>Solicitar invitacion unica</h2>
                     <TextField
