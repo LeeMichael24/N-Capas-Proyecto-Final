@@ -1,6 +1,6 @@
 
 
-const InvitacionUnica = ({ fecha, hora, nombre }) => {
+const InvitacionUnica = ({ fecha, hora, nombre , status}) => {
     return (
         <>
             <h2 className="invitacion-tipo">Invitación Única</h2>

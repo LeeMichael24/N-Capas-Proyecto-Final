@@ -8,7 +8,9 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import InvitacionUnica from '../solicitudes/InvitacionUnica/InvitacionUnica';
-import InvitacionRecurrente from '../solicitudes/InvitacionRecurrente/InvitacionRecurrente'
+import InvitacionRecurrente from '../solicitudes/InvitacionRecurrente/InvitacionRecurrente';
+
+import './InvitacionesJefe.css';
 
 
 const InvitacionesJefe = () => {
@@ -43,7 +45,7 @@ const InvitacionesJefe = () => {
         <div className='father'>
             <div className='Left'>
 
-                <select value={filter} onChange={handleFilterChange}>
+                <select className="IJ-dropdown" value={filter} onChange={handleFilterChange}>
                     <option value="active">Invitaciones Activas</option>
                     <option value="past">Invitaciones Pasadas</option>
                 </select>
@@ -60,6 +62,7 @@ const InvitacionesJefe = () => {
                                 />
                             </div>
                         );
+
                     } else if (invitacion.tipo === 'recurrente') {
                         return (
                             <div className="card-unica-recurrente">

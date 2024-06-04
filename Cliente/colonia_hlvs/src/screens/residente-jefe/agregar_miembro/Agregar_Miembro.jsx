@@ -17,6 +17,8 @@ import { toast } from 'react-toastify';
 
 // Styles
 import "../../resident/dashboard/dashboard.css"
+import './Agregar_Miembro.css';
+
 
 const Agregar_Miembro = () => {
     const notify = () => {
@@ -97,26 +99,6 @@ const Agregar_Miembro = () => {
         { id: 3, Contador: 3, Nombre: "Carlos Suria", },
     ]);
 
-    // const handleSave = () => {
-    //     if (tempCapacidad < rows.filter(row => row.Nombre !== '').length) {
-    //         toast.error('No puedes reducir la capacidad porque hay residentes registrados.');
-    //     } else {
-    //         setCapacidad(tempCapacidad);
-    //         // Actualiza las filas de la tabla
-    //         if (tempCapacidad > rows.length) {
-    //             const newRows = Array.from({ length: tempCapacidad - rows.length }, (_, i) => ({
-    //                 id: rows.length + i + 1,
-    //                 Contador: rows.length + i + 1,
-    //                 Nombre: '',
-    //             }));
-    //             setRows(rows.concat(newRows));
-    //         } else if (tempCapacidad < rows.length) {
-    //             setRows(rows.slice(0, tempCapacidad));
-    //         }
-    //         setEditMode(false);
-    //         toast.success('Se ha guardado la información de la casa.');
-    //     }
-    // };
 
     const handleGuardarResidente = () => {
         if (rows.filter(row => row.Nombre !== '').length >= capacidad) {
@@ -145,37 +127,24 @@ const Agregar_Miembro = () => {
         <div className='father'>
             <div className='Left'>
                 <h2>Agregar miembro</h2>
-
-                <div className="content">
-
-                    <div className="info-casa-container-residentes">
-                        <CardContent className='CardContent'>
-
-                            <div className='casa-info-responsable-tabla'>
-                                <DataGridDemo className="formato" columns={columns} rows={rows} />
-                            </div>
-
-                        </CardContent>
-
-                    </div>
-
-                    <div className="agregar-residente">
-                        <CardContent className='CardContent'>
-
-                            <div className='casa-edit-residentes'>
-                                <h1 className='casa-title'>Agregar Residente</h1>
-                            </div>
-
-                            <div className='text-field-agregar'>
-                                <TextField id="outlined-basic" label="Nombre del Residente" variant="outlined" onChange={handleResidenteChange} value={nuevoResidente} />
-                                <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarResidente} />
-                            </div>
-
-                        </CardContent>
-                    </div>
-
-
+                
+                <div className='casa-info-responsable-tabla  residenteJ-cirt'>
+                    <DataGridDemo className="formato" columns={columns} rows={rows} />
                 </div>
+                
+                <div className="agregar-residente residenteJ-ar">
+                    <CardContent className='CardContent'>
+
+                        <h1 className='casa-title residenteJ-ct'>Agregar Residente</h1>
+
+                        <div className='text-field-agregar '>
+                            <TextField id="outlined-basic" label="Nombre del Residente" variant="outlined" onChange={handleResidenteChange} value={nuevoResidente} />
+                            <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarResidente} />
+                        </div>
+
+                    </CardContent>
+                </div>
+
             </div>
             <div className='Right'>
                 <Menu buttons={buttonsVisit} className='funca' />

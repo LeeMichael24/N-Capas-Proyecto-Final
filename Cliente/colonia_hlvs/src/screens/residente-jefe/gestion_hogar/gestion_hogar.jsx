@@ -39,7 +39,7 @@ const GestionHogar = () => {
                 <h2>Gestionar mi hogar</h2>
 
                 <div className='members'>
-                    <h3 className='membersTitle'>Integrantes Casa# {residenteCasa.houseNumber}</h3>
+                    <h3 className='membersTitle'>Integrantes Casa #{residenteCasa.houseNumber}</h3>
                     {
                         residenteCasa.members.map(member => {
                             return <p key={member}> {member} </p>;
