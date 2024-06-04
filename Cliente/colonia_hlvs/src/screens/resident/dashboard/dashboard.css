@@ -7,6 +7,7 @@ h2{
 .Left{
     min-width: 65%;
     height: 100vh;
+    max-height: calc(100vh - 55px);
     display: flex;
     background-color: white;
     justify-content: center;
@@ -18,6 +19,7 @@ h2{
 .Right{
     min-width: 35%;
     height: 100vh;
+    max-height: calc(100vh - 55px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +31,7 @@ h2{
     display: flex;
     min-width: 35%;
     height: 100vh;
+    max-height: calc(100vh - 55px);
     justify-content: center;
     align-items: center;
     background-color: aliceblue;
@@ -81,7 +84,7 @@ h4{
 
         .Left{
             min-height: 50vh;
-            max-height: 70vh;
+            max-height: max-content + 40px;
             box-sizing: border-box;
         }
         .Right{
