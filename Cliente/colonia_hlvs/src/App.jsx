@@ -44,10 +44,6 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="invitadoHome" element={<InvitadoHome />} />
           <Route path='/invitacion/:id' element={<InvitacionA />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="my-qr" element={<ResidentQr />} />
-          <Route path="invitacion-simple" element={<SingleInvitation />} />
-          <Route path="invitacion-recurrente" element={<RecurrntInvitation />} />
           <Route path="gestion-hogar" element={<GestionHogar />}/>
           <Route path="agregar-miembro" element={<AgregarMiembro />}/>
           <Route path="entradas" element={<Registro_Entradas />}/>
@@ -58,11 +54,16 @@ function App() {
           <Route path="admincasa/agregar-eliminar" element={<AgregarEliminar />} />
           <Route path="admincasa/editarinfo" element={<EditarInfoCasa />} />☻
           <Route path="profileVisitante" element={<ProfileVisitante/>} />
-          <Route path="myprofile" element={<Profile/>} />
 
           {/* vigilante */}
           <Route path="vigilanteHome" element={<HomeVigilante/>} />
 
+          {/* Residente */}
+          <Route path="residente" element={<Dashboard />} />
+          <Route path="residente/mi-qr" element={<ResidentQr />} />
+          <Route path="residente/invitacion/unica" element={<SingleInvitation />} />
+          <Route path="residente/invitacion/recurrente" element={<RecurrntInvitation />} />
+          <Route path="residente/perfil" element={<Profile/>} />
 
 
 

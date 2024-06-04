@@ -21,6 +21,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 import IconButton from "../../../components/buttons/IconButton/IconButton";
 import Navbar from "../../../components/navbar/navbar";
+import residentButtons from '../../../assets/staticInfo/buttonsArray'
 
 
 
@@ -51,14 +52,6 @@ function Profile() {
           closeOnClick: true
       });
   };
-
-    const buttonsVisit = [
-      { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
-      { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
-      { icon: <EventRepeatRoundedIcon />, name: "Invitacion Recurrente", path: "/invitacion-recurrente",},
-      { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
-      { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
-    ];
     
       return (
         <>
@@ -91,7 +84,7 @@ function Profile() {
               
             </div>
             <div id="stay">
-              <Menu buttons={buttonsVisit} className="funca" />
+              <Menu buttons={residentButtons} className="funca" />
             </div>
           </div>
         </>

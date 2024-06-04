@@ -11,18 +11,13 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import Navbar from '../../../components/navbar/navbar';
 
+import residentButtons from '../../../assets/staticInfo/buttonsArray'
+
 function dashboard() {
-  const buttonsVisit = [
-    { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
-    { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
-    { icon: <EventRepeatRoundedIcon />, name: "Invitacion Recurrente", path: "/invitacion-recurrente",},
-    { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
-    { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
-  ];
 
   const navigate = useNavigate("");
   const handleSubmit = () => {
-    navigate("/my-qr");
+    navigate("mi-qr");
   };
 
   return (
@@ -38,7 +33,7 @@ function dashboard() {
           <h4> Presione el boton para generar el codigo-QR</h4>
         </div>
         <div id="stay">
-          <Menu buttons={buttonsVisit} className="funca" />
+          <Menu buttons={residentButtons} className="funca" />
         </div>
       </div>
     </>

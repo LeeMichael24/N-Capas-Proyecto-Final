@@ -15,6 +15,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 import { useEffect } from 'react';
 import Navbar from '../../../components/navbar/navbar';
+import residentButtons from '../../../assets/staticInfo/buttonsArray';
 
 
 function ResidentQr(){
@@ -37,14 +38,6 @@ function ResidentQr(){
         handlerQrCodeChanger()
     })
 
-    const buttonsVisit = [
-        { icon: <HomeRoundedIcon />, name: "Inicio", path: "/dashboard"},
-        { icon: <InsertInvitationRoundedIcon />, name: "Invitacion Simple", path: "/invitacion-simple",},
-        { icon: <EventRepeatRoundedIcon />, name: "Invitacion Recurrente", path: "/invitacion-recurrente",},
-        { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/myprofile" },
-        { icon: <LogoutRoundedIcon />, name: "Cerrar Sesion", path: "/" },
-      ];
-
     return (
         <>
             <Navbar/>
@@ -59,7 +52,7 @@ function ResidentQr(){
                     <IconButton icon={<QrCode2RoundedIcon/>} text='Refrescar' onClick={handlerQrCodeChanger}/>
                 </div>
                 <div className='Right'>
-                    <Menu buttons={buttonsVisit} className='funca'/>
+                    <Menu buttons={residentButtons} className='funca'/>
                 </div>
             </div>
         </>
