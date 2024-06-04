@@ -50,10 +50,10 @@ function SingleInvitation(){
                     <div className='time_pickers'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <TimePicker
-                            label='Hora de Inicio'
+                            label='Hora Inicio'
                             className='time input'/>
                             <TimePicker
-                            label='Hora Final'
+                            label='Hora Fin'
                             className='time input'/>
                         </LocalizationProvider>
                     </div>

@@ -1,17 +1,18 @@
 .Left{
 
     .longText{
-        width: 40vh;
+        width: 45vh;
         
     }
 
     .time_pickers{
-        width: 40vh;
+        width: 45vh;
         display: flex;
         justify-content: space-between;
+        
     
         .time{
-            max-width: 18vh;
+            max-width: 22vh;
         }
     }
 
@@ -23,7 +24,7 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        width: 40vh;
+        width: 45vh;
         
         .days_helper{
             font-size:small;
