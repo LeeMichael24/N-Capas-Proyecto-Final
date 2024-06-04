@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //MUI
-import { TextField } from '@mui/material';
+import { Checkbox, FormControl, FormControlLabel, FormGroup, TextField } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
@@ -22,6 +22,8 @@ import Navbar from '../../../components/navbar/navbar';
 
 
 function RecurrntInvitation() {
+
+    const weekDays = [{name: 'Lunes', value: 'Monday', label: 'L'}, {name: 'Martes', value: 'Tuesday', label: 'M'}, {name: 'Miercoles', value: 'Wednesday', label: 'M'}, {name: 'Jueves', value: 'Thursday', label: 'J'}, {name: 'Viernes', value: 'Friday', label: 'V'}, {name: 'Sabado', value: 'Saturday', label: 'S'}, {name: 'Domingo', value: 'Sunday', label: 'D'}]
 
     const notify = () => {
         console.log('Invitacion solicitada con exito')
@@ -44,7 +46,7 @@ function RecurrntInvitation() {
             <Navbar/>
             <div className='father'>
                 <div className='Left'>
-                    <h2>Solicitar invitacion unica</h2>
+                    <h2>Solicitar invitacion recurrente</h2>
                     <TextField
                         variant='outlined'
                         label='Nombre'
@@ -55,14 +57,26 @@ function RecurrntInvitation() {
                         <DatePicker className='longText input' label='Fecha Fin'/>
                     </LocalizationProvider>
                     <div className='days'>
-                        <p className='days_helper'>Especifique los dias</p>
-                        <DayButton text={'L'}/>
-                        <DayButton text={'M'}/>
-                        <DayButton text={'M'}/>
-                        <DayButton text={'J'}/>
-                        <DayButton text={'V'}/>
-                        <DayButton text={'S'}/>
-                        <DayButton text={'D'}/>
+                        <p className='days_helper'>Dias de la semana</p>
+                        <FormGroup row>
+                            {/* <FormControlLabel 
+                                value="Monday"
+                                control={<Checkbox sx={{color: '#0d1b2a', '&.Mui-checked': {color: '#0d1b2a'},}}/>}
+                                label="L"
+                                labelPlacement='bottom'
+                            /> */}
+                            {weekDays.map((day, index) => (
+                                <FormControlLabel 
+                                    key={index}
+                                    value={day.value}
+                                    control={<Checkbox sx={{color: '#0d1b2a', '&.Mui-checked': {color: '#0d1b2a'},}} className='custom_box'/>}
+                                    label={day.label}
+                                    labelPlacement='bottom'
+                                    className='custom_check'
+                                />
+                            ))}
+                        </FormGroup>
+                        
                     </div>
                     <div className='time_pickers'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>

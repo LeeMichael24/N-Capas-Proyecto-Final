@@ -29,5 +29,34 @@
             font-size:small;
         }
     }
+
+    .days_helper{
+        font-size:small;
+        font-weight: 400;
+        max-width: 8vh;
+        align-self: center;
+    }
+
+    .custom_check{
+        margin: 0;
+    }
+
+    .custom_box{
+        width: 30px;
+    }
     
+}
+
+@media (max-width: 768px) {
+    .Left{
+        .custom_box{
+            width: 25px;
+        }
+
+        .days_helper{
+            font-size:x-small;
+            font-weight: 400;
+            max-width: 6vh;
+        }
+    }
 }
