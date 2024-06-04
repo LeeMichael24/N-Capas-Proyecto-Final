@@ -108,7 +108,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50vh;
-    max-height: 75vh;
+    /* max-height: 80vh; */
+    min-height: auto;
 
     h3{
         font-weight: 400;
