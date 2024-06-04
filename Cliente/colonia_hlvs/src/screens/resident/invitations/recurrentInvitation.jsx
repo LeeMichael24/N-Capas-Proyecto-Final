@@ -75,10 +75,10 @@ function RecurrntInvitation() {
                     <div className='time_pickers'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <TimePicker
-                            label='Hora de Inicio'
+                            label='Hora inicio'
                             className='time input'/>
                             <TimePicker
-                            label='Hora Final'
+                            label='Hora fin'
                             className='time input'/>
                         </LocalizationProvider>
                     </div>
