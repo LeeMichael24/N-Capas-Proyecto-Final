@@ -85,11 +85,13 @@ h4{
             box-sizing: border-box;
         }
         .Right{
-            display: none;
+            /* display: none; */
+            height: max-content + 40px;
+            max-height: 80vh;
         }
         #stay{
-            height: max-content + 20px;
-            max-height: 60vh;
+            height: max-content + 40px;
+            max-height: 80vh;
         }
     }
 }
