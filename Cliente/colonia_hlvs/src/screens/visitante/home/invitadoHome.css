@@ -1,20 +1,27 @@
+.PadreHomeVisitante {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
 .invitadoHome {
   display: flex;
-  height: 100vh;
   width: 100%;
   box-sizing: border-box;
   flex: 1 0 auto;
   overflow: auto;
 }
 
-.left-container {
+.left-container-visitante {
   min-width: 65%;
-  height: 100vh;
   display: flex;
   background-color: white;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 70px;
+  overflow: auto;
 }
 
 .h1-visitante {
@@ -29,14 +36,6 @@
   align-items: center;
 }
 
-.right-container {
-  display: flex;
-  min-width: 35%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: aliceblue;
-}
 
 /* Estilos adicionales para el botón */
 .extra-button {
@@ -55,10 +54,45 @@
   background-color: #0056b3;
 }
 
-
-@media (max-width: 768px) {
-  .invitadoHome {
-    flex-direction: column;
+@media (min-width: 768px) {
+  .right-container {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 500px);
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
+@media (max-width: 768px) {
+
+  .invitadoHome {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .left-container-visitante{
+    width: 100%;
+    height: 73%; /* Ajusta la altura según sea necesario */
+    display: flex;
+    background-color: white;
+    justify-content: flex-start; /* Alinea el contenido al principio */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    overflow-y: auto; /* Muestra la barra de desplazamiento solo en el eje y */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+  }
+  
+
+  .right-container{
+    display: flex !important;
+    min-width: 35% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 20px !important;
+  }
+}

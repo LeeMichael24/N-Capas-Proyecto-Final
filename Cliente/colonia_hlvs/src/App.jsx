@@ -22,6 +22,7 @@ import Profile from './screens/resident/profile/profile';
 import Registro_Entradas from './screens/residente-jefe/lista_entradas/Registro_Entradas';
 import SolicitudVisitas from './screens/residente-jefe/solicitudes/SolicitudVisitas';
 import InvitacionesJefe from './screens/residente-jefe/invitaciones_jefe/InvitacionesJefe';
+import QrVisitante from './screens/visitante/qrVisitante/qrVisitante'
 
 /* const ROLES = {
   SYSADMIN: ['tlahtoani'],
@@ -42,23 +43,18 @@ function App() {
 
           {/* public routes */}
           <Route path="login" element={<Login />} />
-          <Route path="invitadoHome" element={<InvitadoHome />} />
-          <Route path='/invitacion/:id' element={<InvitacionA />} />
           <Route path="gestion-hogar" element={<GestionHogar />}/>
           <Route path="agregar-miembro" element={<AgregarMiembro />}/>
           <Route path="entradas" element={<Registro_Entradas />}/>
           <Route path="solicitudes" element={<SolicitudVisitas />}/>
           <Route path="lista-invitaciones" element={<InvitacionesJefe />}/>
           
-          <Route path="profileVisitante" element={<ProfileVisitante/>} />
 
           {/* Administrador */}
           <Route path="admin" element={<AdminHome />} />
           <Route path="admin/administrar-casa" element={<AdminCasa />} />
           <Route path="admin/administrar-casa/agregar-eliminar" element={<AgregarEliminar />} />
-          <Route path="admin/administrar-casa/editarinformacion" element={<EditarInfoCasa />} />☻
-
-
+          <Route path="admin/administrar-casa/editarinformacion" element={<EditarInfoCasa />} />
 
           {/* vigilante */}
           <Route path="vigilanteHome" element={<HomeVigilante/>} />
@@ -70,6 +66,11 @@ function App() {
           <Route path="residente/invitacion/recurrente" element={<RecurrntInvitation />} />
           <Route path="residente/perfil" element={<Profile/>} />
 
+          {/* Visitante NO TOCAR ANGELITO... ATT: REYNOSA*/}
+          <Route path="invitadoHome" element={<InvitadoHome />} />
+          <Route path='invitadoHome/invitacion/:id' element={<InvitacionA />} />
+          <Route path='invitadoHome/invitacion/:id/mi-qr' element={<QrVisitante />} />
+          <Route path="invitadoHome/profileVisitante" element={<ProfileVisitante />} />
 
 
          {/* we want to protect these routes */}

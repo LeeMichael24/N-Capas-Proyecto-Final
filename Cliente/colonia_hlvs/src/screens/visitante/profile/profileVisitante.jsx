@@ -12,12 +12,13 @@ import "./profileVisitante.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
+import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
 
 
 
 function ProfileVisitante() {
   const buttons = [
-    { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/profileVisitante" },
+    { icon: <InsertInvitationRoundedIcon />, name: "Invitaciones", path: "/InvitadoHome",},
     { icon: <LogoutRoundedIcon />, name: "Cerrar sesión", path: "/login" },
   ];
   
@@ -41,7 +42,7 @@ function ProfileVisitante() {
   const label = { inputProps: { "aria-label": "Soy Menor de edad" } };
 
   return (
-    <>
+    <div className="padreProfile">
       <Navbar />
       <div className="profileVisitante-home">
         <div className="profileVisitante-left-container">
@@ -99,7 +100,7 @@ function ProfileVisitante() {
           <Menu buttons={buttons} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
