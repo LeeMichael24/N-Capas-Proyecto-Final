@@ -44,11 +44,6 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="invitadoHome" element={<InvitadoHome />} />
           <Route path='/invitacion/:id' element={<InvitacionA />} />
-          <Route path="gestion-hogar" element={<GestionHogar />}/>
-          <Route path="agregar-miembro" element={<AgregarMiembro />}/>
-          <Route path="entradas" element={<Registro_Entradas />}/>
-          <Route path="solicitudes" element={<SolicitudVisitas />}/>
-          <Route path="lista-invitaciones" element={<InvitacionesJefe />}/>
           
           <Route path="profileVisitante" element={<ProfileVisitante/>} />
 
@@ -69,15 +64,20 @@ function App() {
           <Route path="residente/invitacion/unica" element={<SingleInvitation />} />
           <Route path="residente/invitacion/recurrente" element={<RecurrntInvitation />} />
           <Route path="residente/perfil" element={<Profile/>} />
-
+          {/* Encargado */ }
+         <Route path="residente/gestion" element={<GestionHogar />}/>
+         <Route path="residente/agregar-miembro" element={<AgregarMiembro />}/>
+         <Route path="residente/entradas" element={<Registro_Entradas />}/>
+         <Route path="residente/solicitudes" element={<SolicitudVisitas />}/>
+         <Route path="residente/invitacion/lista" element={<InvitacionesJefe />}/>
 
 
          {/* we want to protect these routes */}
          {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} /
           <Route path="/" element={<Home />} />
-        </Route>
-
-        <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN]} />}>
+          </Route>
+          
+          <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN]} />}>
           <Route path="editor" element={<Editor />} />
         </Route>
 
