@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import Menu from "../../../components/menu/menu";
 
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 import InvitacionUnica from '../solicitudes/InvitacionUnica/InvitacionUnica';
 import InvitacionRecurrente from '../solicitudes/InvitacionRecurrente/InvitacionRecurrente';
+import Navbar from '../../../components/navbar/navbar';
 
 import './InvitacionesJefe.css';
+import { NavigateBefore } from '@mui/icons-material';
 
 
 const InvitacionesJefe = () => {
@@ -31,17 +28,11 @@ const InvitacionesJefe = () => {
         setFilter(event.target.value);
     };
 
-    const buttonsVisit = [{ icon: <InsertInvitationRoundedIcon />, name: 'Invitacion Simple', path: '/invitacion-simple' },
-    { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/invitacion-recurrente' },
-    { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/myprofile' },
-    { icon: <HomeRoundedIcon />, name: 'Gestionar hogar', path: '/' },
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/myprofile' },
-    { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },]
-
     const filteredInvitations = filter === 'active' ? activeInvitations : pastInvitations;
 
     return (
-
+        <>
+        <Navbar />
         <div className='father'>
             <div className='Left'>
 
@@ -86,9 +77,10 @@ const InvitacionesJefe = () => {
 
             </div>
             <div className='Right'>
-                <Menu buttons={buttonsVisit} className='funca' />
+                <Menu buttons={residentInChargeBtn} className='funca' />
             </div>
         </div>
+        </>
     )
 }
 

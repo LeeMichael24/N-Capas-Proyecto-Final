@@ -5,9 +5,13 @@ import { Routes, Route } from 'react-router-dom';
 import InvitadoHome from './screens/visitante/home/invitadoHome';
 import InvitacionA from './screens/visitante/Invitacion/invitacionA';
 import Dashboard from './screens/resident/dashboard/dashboard';
+import DashboardE from './screens/resident/dashboard/dashboardEncargado';
 import ResidentQr from './screens/resident/resident-qr/resident-qr';
+import ResidentQrE from './screens/resident/resident-qr/resident-qr-encargado';
 import SingleInvitation from './screens/resident/invitations/singleInvitation';
 import RecurrntInvitation from './screens/resident/invitations/recurrentInvitation';
+import SingleInvitationE from './screens/resident/invitations/singleInvitationEncargado';
+import RecurrntInvitationE from './screens/resident/invitations/recurrentInvitationEncargado';
 import GestionHogar from './screens/residente-jefe/gestion_hogar/gestion_hogar';
 import AgregarMiembro from './screens/residente-jefe/agregar_miembro/Agregar_Miembro';
 import AdminHome from './screens/admin/home/adminHome';
@@ -44,8 +48,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="invitadoHome" element={<InvitadoHome />} />
           <Route path='/invitacion/:id' element={<InvitacionA />} />
-          
-          <Route path="profileVisitante" element={<ProfileVisitante/>} />
+
+          <Route path="profileVisitante" element={<ProfileVisitante />} />
 
           {/* Administrador */}
           <Route path="admin" element={<AdminHome />} />
@@ -56,24 +60,28 @@ function App() {
 
 
           {/* vigilante */}
-          <Route path="vigilanteHome" element={<HomeVigilante/>} />
+          <Route path="vigilanteHome" element={<HomeVigilante />} />
 
           {/* Residente */}
           <Route path="residente" element={<Dashboard />} />
           <Route path="residente/mi-qr" element={<ResidentQr />} />
           <Route path="residente/invitacion/unica" element={<SingleInvitation />} />
           <Route path="residente/invitacion/recurrente" element={<RecurrntInvitation />} />
-          <Route path="residente/perfil" element={<Profile/>} />
-          {/* Encargado */ }
-         <Route path="residente/gestion" element={<GestionHogar />}/>
-         <Route path="residente/agregar-miembro" element={<AgregarMiembro />}/>
-         <Route path="residente/entradas" element={<Registro_Entradas />}/>
-         <Route path="residente/solicitudes" element={<SolicitudVisitas />}/>
-         <Route path="residente/invitacion/lista" element={<InvitacionesJefe />}/>
+          <Route path="residente/perfil" element={<Profile />} />
+          {/* Encargado */}
+          <Route path="residente/encargado" element={<DashboardE />} />
+          <Route path="residente/encargado/mi-qr" element={<ResidentQrE />} />
+          <Route path="residente/invitacion/unicae" element={<SingleInvitationE />} />
+          <Route path="residente/invitacion/recurrenten" element={<RecurrntInvitationE />} />
+          <Route path="residente/gestion" element={<GestionHogar />} />
+          <Route path="residente/agregar-miembro" element={<AgregarMiembro />} />
+          <Route path="residente/entradas" element={<Registro_Entradas />} />
+          <Route path="residente/solicitudes" element={<SolicitudVisitas />} />
+          <Route path="residente/invitacion/lista" element={<InvitacionesJefe />} />
 
 
-         {/* we want to protect these routes */}
-         {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} /
+          {/* we want to protect these routes */}
+          {/* <Route element={<RequireAuth allowedRoles={[ROLES.USER, ROLES.ADMIN]} /
           <Route path="/" element={<Home />} />
           </Route>
           

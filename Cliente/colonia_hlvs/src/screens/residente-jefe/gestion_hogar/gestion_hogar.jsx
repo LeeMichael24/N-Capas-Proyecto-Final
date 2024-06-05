@@ -1,59 +1,63 @@
 import IconButton from '../../../components/buttons/IconButton/IconButton'
 import Menu from "../../../components/menu/menu"
+import { useNavigate } from 'react-router-dom';
 
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 // Styles
 import '../../resident/dashboard/dashboard.css'
 import './gestion_hogar.css'
+import Navbar from '../../../components/navbar/navbar';
 
 const residenteCasa = {
     owner: "Lee Michael",
     houseNumber: 35,
     members: [
-        "Maurika Aguilar",
+        "Mauricio Aguilar",
         "Flavio Josefo",
-        "Denys Campes"
+        "Denys Campos"
     ]
 }
 
+
 const GestionHogar = () => {
-    const buttonsVisit = [{ icon: <InsertInvitationRoundedIcon />, name: 'Invitacion Simple', path: '/invitacion-simple' },
-    { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/invitacion-recurrente' },
-    { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/myprofile' },
-    { icon: <HomeRoundedIcon />, name: 'Gestionar hogar', path: '/' },
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/myprofile' },
-    { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },]
+    const navigate = useNavigate();
+
+    const onGoToAddMember = () => {
+        navigate("/residente/agregar-miembro");
+    }
+
+    const onGoToEntries = () => {
+        navigate("/residente/entradas");
+    }
 
 
     return (
-        <div className='father'>
-            <div className='Left'>
-                <h2>Gestionar mi hogar</h2>
+        <>
+            <Navbar />
+            <div className='father'>
+                <div className='Left'>
+                    <h2>Gestionar mi hogar</h2>
 
-                <div className='members'>
-                    <h3 className='membersTitle'>Integrantes Casa #{residenteCasa.houseNumber}</h3>
-                    {
-                        residenteCasa.members.map(member => {
-                            return <p key={member}> {member} </p>;
-                        })
-                    }
+                    <div className='members'>
+                        <h3 className='membersTitle'>Integrantes Casa #{residenteCasa.houseNumber}</h3>
+                        {
+                            residenteCasa.members.map(member => {
+                                return <p key={member}> {member} </p>;
+                            })
+                        }
+                    </div>
+
+                    <IconButton icon={<AddRoundedIcon />} text={'Agregar miembro a familia'} className="samesize" onClick={onGoToAddMember} />
+                    <IconButton icon={<FormatListBulletedRoundedIcon />} text={'Revisar lista de entrada'} className="samesize" onClick={onGoToEntries} />
                 </div>
-
-                <IconButton icon={<AddRoundedIcon />} text={'Agregar miembro a familia'} className="samesize"/>
-                <IconButton icon={<FormatListBulletedRoundedIcon />} text={'Revisar lista de entrada'} className="samesize"/>
+                <div className='Right'>
+                    <Menu buttons={residentInChargeBtn} className='funca' />
+                </div>
             </div>
-            <div className='Right'>
-                <Menu buttons={buttonsVisit} className='funca' />
-            </div>
-        </div>
+        </>
     )
 }
 

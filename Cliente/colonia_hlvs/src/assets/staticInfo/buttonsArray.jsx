@@ -3,6 +3,9 @@ import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
+import EventAvailableRoundedIcon from '@mui/icons-material/EventAvailableRounded';
+import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
 
 const residentButtons = [
     { icon: <HomeRoundedIcon />, name: "Inicio", path: "/residente"},

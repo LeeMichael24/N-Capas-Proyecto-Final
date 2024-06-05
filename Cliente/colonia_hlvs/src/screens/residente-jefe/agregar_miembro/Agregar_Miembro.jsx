@@ -1,14 +1,8 @@
 import IconButton from '../../../components/buttons/IconButton/IconButton'
 import Menu from "../../../components/menu/menu"
 
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 import CardContent from '@mui/material/CardContent';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-
 import { TextField } from '@mui/material';
 import { useState } from 'react';
 import DataGridDemo from '../../../components/table/table';
@@ -18,6 +12,7 @@ import { toast } from 'react-toastify';
 // Styles
 import "../../resident/dashboard/dashboard.css"
 import './Agregar_Miembro.css';
+import Navbar from '../../../components/navbar/navbar';
 
 
 const Agregar_Miembro = () => {
@@ -35,19 +30,6 @@ const Agregar_Miembro = () => {
 
     const [tempCapacidad, setTempCapacidad] = useState(capacidad);
     const [nuevoResidente, setNuevoResidente] = useState('');
-
-
-    // const handleEditClick = () => {
-    //     setEditMode(true);
-    // };
-
-    // const handleSaveClick = () => {
-    //     setEditMode(false);
-    // };
-
-    // const handleCapacidadChange = (event) => {
-    //     setTempCapacidad(Number(event.target.value));
-    // };
 
     const handleDelete = (id) => {
         setRows(rows.map(row => row.id === id ? { ...row, Nombre: '' } : row));
@@ -115,41 +97,37 @@ const Agregar_Miembro = () => {
         }
     };
 
-    const buttonsVisit = [{ icon: <InsertInvitationRoundedIcon />, name: 'Invitacion Simple', path: '/invitacion-simple' },
-    { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/invitacion-recurrente' },
-    { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/myprofile' },
-    { icon: <HomeRoundedIcon />, name: 'Gestionar hogar', path: '/' },
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/myprofile' },
-    { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },]
-
 
     return (
-        <div className='father'>
-            <div className='Left'>
-                <h2>Agregar miembro</h2>
-                
-                <div className='casa-info-responsable-tabla  residenteJ-cirt'>
-                    <DataGridDemo className="formato" columns={columns} rows={rows} />
+        <>
+            <Navbar />
+            <div className='father'>
+                <div className='Left'>
+                    <h2>Agregar miembro</h2>
+
+                    <div className='casa-info-responsable-tabla  residenteJ-cirt'>
+                        <DataGridDemo className="formato" columns={columns} rows={rows} />
+                    </div>
+
+                    <div className="agregar-residente residenteJ-ar">
+                        <CardContent className='CardContent'>
+
+                            <h1 className='casa-title residenteJ-ct'>Agregar Residente</h1>
+
+                            <div className='text-field-agregar '>
+                                <TextField id="outlined-basic" label="Nombre del Residente" variant="outlined" onChange={handleResidenteChange} value={nuevoResidente} />
+                                <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarResidente} />
+                            </div>
+
+                        </CardContent>
+                    </div>
+
                 </div>
-                
-                <div className="agregar-residente residenteJ-ar">
-                    <CardContent className='CardContent'>
-
-                        <h1 className='casa-title residenteJ-ct'>Agregar Residente</h1>
-
-                        <div className='text-field-agregar '>
-                            <TextField id="outlined-basic" label="Nombre del Residente" variant="outlined" onChange={handleResidenteChange} value={nuevoResidente} />
-                            <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarResidente} />
-                        </div>
-
-                    </CardContent>
+                <div className='Right'>
+                    <Menu buttons={residentInChargeBtn} className='funca' />
                 </div>
-
             </div>
-            <div className='Right'>
-                <Menu buttons={buttonsVisit} className='funca' />
-            </div>
-        </div>
+        </>
     )
 }
 
