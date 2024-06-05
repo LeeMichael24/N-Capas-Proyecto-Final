@@ -20,7 +20,7 @@ export default function Login() {
     const users = [
         { name: 'Invitado', path: '/InvitadoHome', icon: <IconButton icon={<PersonRoundedIcon />}/>, mail: 'invitado@mail.com' },
         { name: 'Residente', path: '/residente', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'residente@mail.com' },
-        { name: 'Encargado', path: '/residente', icon: <IconButton icon={<PersonRoundedIcon />}/>, mail: 'encargado@mail.com' }, // to be changed 
+        { name: 'Encargado', path: '/residente/encargado', icon: <IconButton icon={<PersonRoundedIcon />}/>, mail: 'encargado@mail.com' }, // to be changed 
         { name: 'Admin', path: '/admin', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'admin@mail.com' },
         { name: 'Vigilante', path: '/vigilanteHome', icon: <IconButton icon={<PersonRoundedIcon/>}/>, mail: 'vigilante@secure.com' },
       ];

@@ -25,6 +25,22 @@ const invitaciones = [
         nombre: 'Pedro Paramo',
         dias: ['L', 'M']
     },
+    {
+        id: 3,
+        tipo: 'unica',
+        fecha: '6/2/2024',
+        hora: '12:30 pm',
+        nombre: 'Pedro Paramo'
+    },
+    {
+        id: 4,
+        tipo: 'recurrente',
+        fechaInicio: '6/2/2024',
+        fechaFin: '6/25/2024',
+        hora: '12:30 - 3:00 pm',
+        nombre: 'Pedro Paramo',
+        dias: ['L', 'M']
+    },
 ];
 
 
@@ -34,8 +50,8 @@ const SolicitudVisitas = () => {
         <>
             <Navbar />
             <div className='father'>
-                <div className='Left'>
-                    <h2>Solicitudes de visita</h2>
+                <div className='Left' id='scroller'>
+                    <h2 className="scroll_padd">Solicitudes de visita</h2>
 
                     {invitaciones.map((invitacion) => {
                         if (invitacion.tipo === 'unica') {

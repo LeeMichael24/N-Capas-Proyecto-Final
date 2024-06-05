@@ -1,11 +1,15 @@
 .card-unica-recurrente {
     background-color: var(--background-color-invitations);
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: var(--rad);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
     margin: 10px;
+}
+
+.scroll_padd{
+    margin: 20px;
 }
 
 .invitacion-tipo {
