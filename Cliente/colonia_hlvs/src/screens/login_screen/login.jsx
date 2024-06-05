@@ -35,7 +35,7 @@ export default function Login() {
     <div className='main-container-login'>
         <div className='leftSide'>
             <div className='left-container-login'>
-                <h1 className='h1-login-left'>Bienvenido</h1>
+                <h1 className='h1-login-left'></h1>
                 <img  src={Logo} className='image-left-container' />
             </div>
         </div>
@@ -43,13 +43,14 @@ export default function Login() {
             <div className='rigth-container-login'>
                 <h1 className='h1-login-rigth'>Bienvenido</h1>
                 <img  src={Logo} className='image-rigth-container' />
-                <h1 className='h1-login'>Bienvenido a Colonias HLVS, inicia sesión con Google!</h1>
+                <h1 className='h1-login'>Bienvenido a HLVS, inicia sesión con Google!</h1>
+                
                 {/* esto se reemplaraza con el bottom de google */}
                 <button  className='btn-google' onClick={handleOpen}>
                     <GoogleIcon className='colorGoogle'/>
                     <h3 className='h3Google'>Sign in with Google</h3>
                 </button>
-                <h3 className='h3-copy'>© 2024 Todos los derechso reservados</h3>
+                <h3 className='h3-copy'>© 2024 Todos los derechos reservados</h3>
             </div>
         </div>
         {/* Modal de seleccion de cuenta  sera borrado una vez implementada la conexion con google*/}
