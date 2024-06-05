@@ -8,11 +8,6 @@ import { toast } from "react-toastify";
 
 //mui
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
-import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { TextField } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";

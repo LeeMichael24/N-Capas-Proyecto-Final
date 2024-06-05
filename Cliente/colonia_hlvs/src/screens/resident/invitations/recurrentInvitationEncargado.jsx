@@ -15,7 +15,7 @@ import './Invitation.css'
 import '../dashboard/dashboard.css';
 import Navbar from '../../../components/navbar/navbar';
 
-import residentButtons from '../../../assets/staticInfo/buttonsArray'
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 
 function RecurrntInvitation() {
@@ -80,7 +80,7 @@ function RecurrntInvitation() {
                     <IconButton icon={null} text={'Solicitar Invitacion'} onClick={notify}/>
                 </div>
                 <div className='Right'>
-                    <Menu buttons={residentButtons} className='funca'/>
+                    <Menu buttons={residentInChargeBtn} className='funca'/>
                 </div>
             </div>
         </>

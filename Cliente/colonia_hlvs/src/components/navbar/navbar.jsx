@@ -11,10 +11,7 @@ function Navbar() {
         <img className='logo-img' src={Logo} alt="Logo" />
       </div>
       <div className="welcome-message">
-        Bienvenido: {name + '!'}
-        {/* tienen que mostrarse los parametros de los usarios que ya estan en el login que 
-          son los modulos que ya estab agregados, admin, visitante, vigilante, etc
-         */}
+        Bienvenido {name}
       </div>
     </nav>
   )

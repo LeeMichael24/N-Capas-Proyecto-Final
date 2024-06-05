@@ -14,7 +14,7 @@ import '../dashboard/dashboard.css';
 import'./Invitation.css';
 import Navbar from '../../../components/navbar/navbar';
 
-import residentButtons from '../../../assets/staticInfo/buttonsArray'
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 function SingleInvitation(){
     // const [selectedDate, handleDateChange] = useState(new Date());
@@ -54,7 +54,7 @@ function SingleInvitation(){
                     <IconButton icon={null} text={'Solicitar Invitacion'} onClick={notify}/>
                 </div>
                 <div className='Right'>
-                    <Menu buttons={residentButtons} className='funca'/>
+                    <Menu buttons={residentInChargeBtn} className='funca'/>
                 </div>
             </div>
         </>
