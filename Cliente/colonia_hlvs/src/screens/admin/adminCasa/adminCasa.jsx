@@ -59,7 +59,7 @@ function AdminCasa() {
                   <IconButton
                     className="icon-edit"
                     icon={<EditIcon sx={{ color: '#0d1b2a' }} />}
-                    onClick={() => navigate(`/admincasa/editarinfo`)} />
+                    onClick={() => navigate('editarinformacion')} />
                 ) : null
               );
             }
@@ -80,10 +80,9 @@ function AdminCasa() {
 
     const buttons = [
         { icon: <ShowChartIcon />, name: 'Panel de Control', path: '/admin' },
-        { icon: <HolidayVillageIcon />, name: 'Administrar Casa', path: '/admincasa' },
-        { icon: <PersonIcon />, name: 'Mi Perfil', path: '/cerrar-sesion' },
+        { icon: <HolidayVillageIcon />, name: 'Administrar Casa', path: '/admin/administrar-casa' },
         { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
-    ];
+      ];
 
     return (
         <div className="parent">
@@ -97,7 +96,7 @@ function AdminCasa() {
                 <h1 className='title'>Administrar Casas</h1>
 
                 <div className="text-field">
-                    <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' onClick={() => navigate('/admincasa/agregar-eliminar')} />
+                    <IconButton className="button-panel-admin" icon='' text='Agregar / Eliminar casa' onClick={() => navigate('agregar-eliminar')} />
                 </div>
 
                 <h1 className="title-r">Resgitro de Casas</h1>
