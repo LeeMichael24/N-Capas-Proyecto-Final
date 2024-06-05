@@ -9,11 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Checkbox, FormControl, FormControlLabel, FormGroup, TextField } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 //sTYLES
 import './Invitation.css'
@@ -40,7 +35,7 @@ function RecurrntInvitation() {
             <Navbar/>
             <div className='father'>
                 <div className='Left'>
-                    <h2>Solicitar invitacion recurrente</h2>
+                    <h2 className='mauri'>Solicitar invitacion recurrente</h2>
                     <TextField
                         variant='outlined'
                         label='Nombre'

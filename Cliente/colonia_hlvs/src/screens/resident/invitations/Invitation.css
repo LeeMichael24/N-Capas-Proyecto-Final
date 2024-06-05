@@ -1,5 +1,9 @@
 .Left{
 
+    .mauri{
+        justify-content: center;
+    }
+
     .longText{
         width: 45vh;
         
@@ -73,6 +77,10 @@
             .time{
                 max-width: 16vh;
             }
+        }
+        .mauri{
+            width: 35vh;
+            justify-content: center;
         }
     }
 }

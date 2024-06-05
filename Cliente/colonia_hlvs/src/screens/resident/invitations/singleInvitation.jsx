@@ -8,12 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TextField } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-
 
 //Styles
 import '../dashboard/dashboard.css';
@@ -38,7 +32,7 @@ function SingleInvitation(){
             <Navbar/>
             <div className='father'>
                 <div className='Left'>
-                    <h2>Solicitar invitacion unica</h2>
+                    <h2 className='mauri'>Solicitar invitacion unica</h2>
                     <TextField
                         variant='outlined'
                         label='Nombre'

@@ -4,11 +4,6 @@ import Menu from '../../../components/menu/menu';
 
 //mui
 import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import Navbar from '../../../components/navbar/navbar';
 
 import residentButtons from '../../../assets/staticInfo/buttonsArray'
