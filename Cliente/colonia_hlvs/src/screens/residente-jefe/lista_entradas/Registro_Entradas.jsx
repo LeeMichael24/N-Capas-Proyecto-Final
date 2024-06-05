@@ -1,14 +1,9 @@
 import Menu from "../../../components/menu/menu";
 import './Registro_Entradas.css'
 
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 import DataGridDemo from '../../../components/table/table';
+import Navbar from "../../../components/navbar/navbar";
 
 const Registro_Entradas = () => {
     const columns = [
@@ -56,28 +51,24 @@ const Registro_Entradas = () => {
 
     ];
 
-    const buttonsVisit = [{ icon: <InsertInvitationRoundedIcon />, name: 'Invitacion Simple', path: '/invitacion-simple' },
-    { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/invitacion-recurrente' },
-    { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/myprofile' },
-    { icon: <HomeRoundedIcon />, name: 'Gestionar hogar', path: '/' },
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/myprofile' },
-    { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },]
-
 
     return (
-        <div className='father'>
-            <div className='Left'>
-                <h2>Registro entrada a casa</h2>
+        <>
+            <Navbar />
+            <div className='father'>
+                <div className='Left'>
+                    <h2>Registro entrada a casa</h2>
 
-                <div className="table-container table-container-secondary">
-                    <DataGridDemo columns={columns} rows={rows} />
+                    <div className="table-container table-container-secondary">
+                        <DataGridDemo columns={columns} rows={rows} />
+                    </div>
+
                 </div>
-
+                <div className='Right'>
+                    <Menu buttons={residentInChargeBtn} className='funca' />
+                </div>
             </div>
-            <div className='Right'>
-                <Menu buttons={buttonsVisit} className='funca' />
-            </div>
-        </div>
+        </>
     )
 }
 

@@ -1,15 +1,11 @@
 import Menu from "../../../components/menu/menu";
 import './SolicitudesVisitas.css';
 
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import ChecklistRtlRoundedIcon from '@mui/icons-material/ChecklistRtlRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 import InvitacionUnica from "./InvitacionUnica/InvitacionUnica";
 import InvitacionRecurrente from "./InvitacionRecurrente/InvitacionRecurrente";
 import SolicitudButton from "./AuxButtons/SolicitudButton";
+import Navbar from "../../../components/navbar/navbar";
 
 
 const invitaciones = [
@@ -34,55 +30,51 @@ const invitaciones = [
 
 const SolicitudVisitas = () => {
 
-    const buttonsVisit = [{ icon: <InsertInvitationRoundedIcon />, name: 'Invitacion Simple', path: '/invitacion-simple' },
-    { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/invitacion-recurrente' },
-    { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/myprofile' },
-    { icon: <HomeRoundedIcon />, name: 'Gestionar hogar', path: '/' },
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/myprofile' },
-    { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },]
-
     return (
-        <div className='father'>
-            <div className='Left'>
-                <h2>Solicitudes de visita</h2>
+        <>
+            <Navbar />
+            <div className='father'>
+                <div className='Left'>
+                    <h2>Solicitudes de visita</h2>
 
-                {invitaciones.map((invitacion) => {
-                    if (invitacion.tipo === 'unica') {
-                        return (
-                            <div className="card-unica-recurrente">
-                                <InvitacionUnica
-                                    key={invitacion.id}
-                                    fecha={invitacion.fecha}
-                                    hora={invitacion.hora}
-                                    nombre={invitacion.nombre}
-                                />
-                                <SolicitudButton />
-                            </div>
-                        );
-                    } else if (invitacion.tipo === 'recurrente') {
-                        return (
-                            <div className="card-unica-recurrente">
-                                <InvitacionRecurrente
-                                    key={invitacion.id}
-                                    fechaInicio={invitacion.fechaInicio}
-                                    fechaFin={invitacion.fechaFin}
-                                    hora={invitacion.hora}
-                                    nombre={invitacion.nombre}
-                                    dias={invitacion.dias}
-                                />
-                                <SolicitudButton />
-                            </div>
-                        );
-                    } else {
-                        return null;
-                    }
-                })}
+                    {invitaciones.map((invitacion) => {
+                        if (invitacion.tipo === 'unica') {
+                            return (
+                                <div className="card-unica-recurrente">
+                                    <InvitacionUnica
+                                        key={invitacion.id}
+                                        fecha={invitacion.fecha}
+                                        hora={invitacion.hora}
+                                        nombre={invitacion.nombre}
+                                    />
+                                    <SolicitudButton />
+                                </div>
+                            );
+                        } else if (invitacion.tipo === 'recurrente') {
+                            return (
+                                <div className="card-unica-recurrente">
+                                    <InvitacionRecurrente
+                                        key={invitacion.id}
+                                        fechaInicio={invitacion.fechaInicio}
+                                        fechaFin={invitacion.fechaFin}
+                                        hora={invitacion.hora}
+                                        nombre={invitacion.nombre}
+                                        dias={invitacion.dias}
+                                    />
+                                    <SolicitudButton />
+                                </div>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })}
 
+                </div>
+                <div className='Right'>
+                    <Menu buttons={residentInChargeBtn} className='funca' />
+                </div>
             </div>
-            <div className='Right'>
-                <Menu buttons={buttonsVisit} className='funca' />
-            </div>
-        </div>
+        </>
     )
 }
 
