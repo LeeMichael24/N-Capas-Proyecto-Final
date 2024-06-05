@@ -60,6 +60,10 @@
             max-width: 6vh;
         }
 
+        .days{
+            max-width: 35vh;
+        }
+
         .longText{
             width: 35vh;
         }
