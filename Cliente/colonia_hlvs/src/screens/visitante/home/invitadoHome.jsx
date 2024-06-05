@@ -9,7 +9,7 @@ import "./invitadoHome.css";
 
 function InvitadoHome() {
     const buttons = [
-        { icon: <PersonRoundedIcon/>, name: 'Mi perfil', path: '/profileVisitante' },
+        { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/InvitadoHome/profileVisitante" },
         { icon: <LogoutRoundedIcon/>, name: 'Cerrar sesión', path: '/login' },
     ];
 
@@ -18,19 +18,21 @@ function InvitadoHome() {
         { id: 1, title: '34', date: '04/20/24', time: '14:30' },
         { id: 2, title: '48', date: '05/20/24', time: '14:34' },
         { id: 3, title: '83', date: '02/20/24', time: '14:40' },
+        { id: 4, title: '78', date: '19/06/24', time: '14:40' },
+        { id: 3, title: '45', date: '09/9/24', time: '14:40' },
     ];
 
     const navigate = useNavigate();
 
     function handleCardClick(item) {
-        navigate(`/invitacion/${item.id}`);
+        navigate(`/invitadoHome/invitacion/${item.id}`);
     }
 
     return (
-        <>
+        <div className="PadreHomeVisitante">
             <Navbar />
             <div className="invitadoHome">
-                <div className="left-container">
+                <div className="left-container-visitante">
                     <h1 className="h1-visitante">Tus invitaciones</h1>
                     <div className="card-style-mt">
                         {Data.map((item) => (
@@ -49,7 +51,7 @@ function InvitadoHome() {
                     <Menu buttons={buttons} />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

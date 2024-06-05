@@ -1,0 +1,59 @@
+.Left{
+
+    .Hint{
+        display: flex;
+        font-size: var(--hint-font-size);
+        background-color: var(--accent);
+        margin-top: 2rem;
+        font-weight: normal;
+        padding: 1rem;
+        width: 30vh;
+        flex-flow: row;
+        align-items: center;
+        text-align: left;
+        border-radius: var(--rad);
+
+        .icon{
+            margin-right: 20px;
+        }
+    }
+
+    .myQR{
+        width: 30vh;
+    }
+}
+
+.father{
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .left{
+        min-width: 65%;
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        overflow-y: auto;
+        margin-top: 40px;
+    }
+    .visitanteQrLeft{
+        height: 870% !important;
+        overflow-y: auto;
+        justify-content: flex-start;
+    }
+    
+    .right{
+        display: flex !important;
+        min-width: 35% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        background-color: aliceblue;
+    }
+    .visitanteQrRigth{
+        height: 35% !important;
+    }
+}

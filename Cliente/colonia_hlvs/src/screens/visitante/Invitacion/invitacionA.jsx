@@ -9,9 +9,11 @@ import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { useNavigate } from "react-router-dom";
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
+import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
 
 const buttons = [
-  { icon: <PersonRoundedIcon/>, name: "Mi perfil", path: "/profileVisitante" },
+  { icon: <InsertInvitationRoundedIcon />, name: "Invitaciones", path: "/InvitadoHome",},
+  { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/InvitadoHome/profileVisitante" },
   { icon: <LogoutRoundedIcon/>, name: "Cerrar sesión", path: "/login" },
 ];
 
@@ -33,11 +35,11 @@ function InvitacionA() {
   }, [id]);
 
   function handlerQR() {
-    navigate('/my-qr');
+    navigate(`/invitadoHome/invitacion/${id}/mi-qr`);
   }
 
   return (
-    <>
+    <div className="padreVisitante">
       <Navbar />
       <div className="invitacionA-home">
         <div className="invitacionA-left-container">
@@ -64,7 +66,7 @@ function InvitacionA() {
           <Menu buttons={buttons} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

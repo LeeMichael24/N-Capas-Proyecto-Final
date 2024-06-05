@@ -1,5 +1,6 @@
 import './navbar.css';
 import Logo from '../../assets/images/Logo.png';
+import { Navigate } from 'react-router-dom';
 
 function Navbar() {
   const name = 'Jose';

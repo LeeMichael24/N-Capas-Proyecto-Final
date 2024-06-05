@@ -1,21 +1,22 @@
+.padreVisitante{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .invitacionA-home {
   display: flex;
-  height: 100vh;
+  height: fit-content;
   width: 100%;
   box-sizing: border-box;
   flex: 1 0 auto;
   overflow: auto;
 }
 
-.invitacionA-left-container {
-  min-width: 65%;
-  height: 100vh;
-  display: flex;
-  background-color: white;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .invitacionA-h1-visitante {
   margin-bottom: 40px;
@@ -27,15 +28,6 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-}
-
-.invitacionA-right-container {
-  display: flex;
-  min-width: 35%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: aliceblue;
 }
 
 .invitacionA-button-container {
@@ -65,9 +57,52 @@
   font-size: 20px;
 }
 
+@media (min-width: 768px) {
+  .invitacionA-right-container {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 500px);
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .invitacionA-left-container {
+    min-width: 65%;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}
+
 /* Media Queries para hacer la vista responsive */
 @media (max-width: 768px) {
   .invitacionA-home {
     flex-direction: column;
+    height: 100vh;
+  }
+
+  .invitacionA-left-container {
+    min-width: 65%;
+    display: flex;
+    height: max-content;
+    background-color: white;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-top: 40px;
+  }
+
+  .invitacionA-right-container{
+    display: flex !important;
+    min-width: 35% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: aliceblue;
   }
 }
