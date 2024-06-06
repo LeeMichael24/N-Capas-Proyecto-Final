@@ -1,13 +1,11 @@
 import Navbar from "../../../components/navbar/navbar";
 import Menu from "../../../components/menu/menu";
-import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import { blue } from "@mui/material/colors";
 import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
-import QrCodeIcon from "@mui/icons-material/QrCode";
 import "./profileVisitante.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -90,7 +88,6 @@ function ProfileVisitante() {
             </div>
             <div className="profileVisitante-button-container">
               <button className="profileVisitante-button-save" onClick={handleRegisterClick}>
-                <QrCodeIcon />
                 Guardar información
               </button>
             </div>
