@@ -1,10 +1,8 @@
-// ButtonMenu.jsx
-
 import { useNavigate } from 'react-router-dom';
 import './menuButtom.css'; // Asegúrate de definir estilos aquí
 
 // eslint-disable-next-line react/prop-types
-const ButtonMenu = ({ icon, name, path }) => {
+const ButtonMenu = ({ icon, name, path, isSelected, onClick }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,7 +10,7 @@ const ButtonMenu = ({ icon, name, path }) => {
   };
 
   return (
-    <div className="button-menu" onClick={handleClick}>
+    <div className={`button-menu ${isSelected ? 'selected' : ''}`} onClick={handleClick}>
       {icon}
       <span className="button-name">{name}</span>
     </div>

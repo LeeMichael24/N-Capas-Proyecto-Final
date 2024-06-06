@@ -13,6 +13,11 @@
   cursor: pointer;
 }
 
+.button-menu.selected {
+  background-color: #007BFF;
+  color: white;
+}
+
 .button-menu:hover {
   transform: scale(1.05);
   background-color: #1b263b;
