@@ -194,7 +194,7 @@ function AdminHome() {
           <DataGridDemo columns={columns} rows={rows} />
         </div>
 
-        <h1 className='title-r'>Intervalo de duracion de invitaciones</h1>
+        <h1 className='title-r'>Tiempo de gracia de QR</h1>
 
         <div className='duracion'>
           <QuantityInput value={value} onChange={handleChange} />
