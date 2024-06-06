@@ -17,7 +17,7 @@ const residentInChargeBtn = [
     { icon: <EventRepeatRoundedIcon />, name: 'Invitacion Recurrente', path: '/residente/invitacion/recurrenten' },
     { icon: <ChecklistRtlRoundedIcon />, name: 'Solicitudes', path: '/residente/solicitudes' },
     { icon: <EventAvailableRoundedIcon />, name: 'Historial de invitaciones', path: '/residente/invitacion/lista' },    
-    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/residente/perfil' },
+    { icon: <PersonRoundedIcon />, name: 'Mi perfil', path: '/residente/perfile' },
     { icon: <LogoutRoundedIcon />, name: 'Cerrar Sesion', path: '/' },
 ];
 

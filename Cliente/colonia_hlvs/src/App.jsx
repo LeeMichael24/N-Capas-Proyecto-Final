@@ -23,6 +23,7 @@ import EditarInfoCasa from './screens/admin/editarInfoCasa/editarInfoCasa';
 import ProfileVisitante from './screens/visitante/profile/profileVisitante';
 import HomeVigilante from './screens/vigilante/home/homeVigilante';
 import Profile from './screens/resident/profile/profile';
+import ProfileE from './screens/resident/profile/profileEncargado';
 import Registro_Entradas from './screens/residente-jefe/lista_entradas/Registro_Entradas';
 import SolicitudVisitas from './screens/residente-jefe/solicitudes/SolicitudVisitas';
 import InvitacionesJefe from './screens/residente-jefe/invitaciones_jefe/InvitacionesJefe';
@@ -96,6 +97,7 @@ function App() {
           <Route path="residente/entradas" element={<Registro_Entradas />} />
           <Route path="residente/solicitudes" element={<SolicitudVisitas />} />
           <Route path="residente/invitacion/lista" element={<InvitacionesJefe />} />
+          <Route path="residente/perfile" element={<ProfileE/>} />
 
 
           {/* we want to protect these routes */}
