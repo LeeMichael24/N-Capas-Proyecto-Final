@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Menu from "../../../components/menu/menu";
 import './SolicitudesVisitas.css';
 
@@ -8,7 +9,7 @@ import SolicitudButton from "./AuxButtons/SolicitudButton";
 import Navbar from "../../../components/navbar/navbar";
 
 
-const invitaciones = [
+const initialInvitaciones = [
     {
         id: 1,
         tipo: 'unica',
@@ -45,6 +46,15 @@ const invitaciones = [
 
 
 const SolicitudVisitas = () => {
+    const [invitaciones, setInvitaciones] = useState(initialInvitaciones);
+
+    const handleAceptar = (id) => {
+        setInvitaciones(invitaciones.filter(invitacion => invitacion.id !== id));
+    };
+
+    const handleRechazar = (id) => {
+        setInvitaciones(invitaciones.filter(invitacion => invitacion.id !== id));
+    };
 
     return (
         <>
@@ -63,7 +73,10 @@ const SolicitudVisitas = () => {
                                         hora={invitacion.hora}
                                         nombre={invitacion.nombre}
                                     />
-                                    <SolicitudButton />
+                                    <SolicitudButton
+                                        onAceptar={() => handleAceptar(invitacion.id)}
+                                        onRechazar={() => handleRechazar(invitacion.id)}
+                                    />
                                 </div>
                             );
                         } else if (invitacion.tipo === 'recurrente') {
@@ -77,7 +90,10 @@ const SolicitudVisitas = () => {
                                         nombre={invitacion.nombre}
                                         dias={invitacion.dias}
                                     />
-                                    <SolicitudButton />
+                                    <SolicitudButton
+                                        onAceptar={() => handleAceptar(invitacion.id)}
+                                        onRechazar={() => handleRechazar(invitacion.id)}
+                                    />
                                 </div>
                             );
                         } else {
