@@ -10,12 +10,14 @@ import "./profileVisitante.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
+import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
 
 
 
 function ProfileVisitante() {
   const buttons = [
+    { icon: <PersonRoundedIcon />, name: "Perfil", path: "/invitadoHome/profileVisitante",},
     { icon: <InsertInvitationRoundedIcon />, name: "Invitaciones", path: "/InvitadoHome",},
     { icon: <LogoutRoundedIcon />, name: "Cerrar sesión", path: "/login" },
   ];
