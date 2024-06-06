@@ -4,23 +4,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .profileVisitante-home {
   display: flex;
+  height: fit-content;
   width: 100%;
   box-sizing: border-box;
-  flex: 1 0 auto; 
+  flex: 1 0 auto;
   overflow: auto;
-  }
+  align-items: center;
+  justify-content: center;
+}
   
   .profileVisitante-left-container {
-    min-width: 65%;
+    width: 65%;
     display: flex;
     background-color: white;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea el contenido al principio */
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 70px;
   }
 
   
@@ -83,39 +90,32 @@
   
   @media (min-width: 768px) {
     .profileVisitante-right-container {
-      position: fixed;
-      top: 50%;
-      left: calc(50% + 500px);
-      transform: translate(-50%, -50%);
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 35%;
     }
   }
   @media (max-width: 768px) {
     .profileVisitante-home {
       flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      justify-content: center;
-      justify-items: center;
-      min-width: 300px;
-    }
-    .padreProfile{
       height: 100vh;
     }
 
     .profileVisitante-left-container{
-      height: 85% ;
+      height: 70% ;
+      width: 100%;
+      min-width: 100%;
+      justify-content: center;
+      align-items: center;
     }
 
     .profileVisitante-right-container{
-      display: flex !important;
-      min-width: 35% !important;
-      justify-content: center !important;
-      align-items: center !important;
+      width: 100%;
+      min-width: 100%;
+      justify-content: center;
+      align-items: center;
       background-color: aliceblue;
-      height: 50vh;
     }
   }
   

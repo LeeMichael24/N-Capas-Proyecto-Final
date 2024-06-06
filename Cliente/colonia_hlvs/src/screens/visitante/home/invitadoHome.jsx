@@ -47,7 +47,7 @@ function InvitadoHome() {
                         ))}
                     </div>
                 </div>
-                <div className="right-container">
+                <div className="right-container-visitante">
                     <Menu buttons={buttons} />
                 </div>
             </div>
