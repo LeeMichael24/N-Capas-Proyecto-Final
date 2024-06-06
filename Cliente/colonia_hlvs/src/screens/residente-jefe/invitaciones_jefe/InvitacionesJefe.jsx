@@ -9,7 +9,8 @@ import Navbar from '../../../components/navbar/navbar';
 import './InvitacionesJefe.css';
 import { NavigateBefore } from '@mui/icons-material';
 import { FormControl } from '@mui/base';
-import { InputLabel, MenuItem, Select } from '@mui/material';
+import { InputLabel, MenuItem, Select, Fab, useMediaQuery } from '@mui/material';
+import WidgetsIcon from '@mui/icons-material/Widgets';
 
 const initialActiveInvitations = [
     { id: 1, tipo: 'unica', fecha: '2024-06-05', hora: '14:00', nombre: 'Juan Pérez' },
@@ -39,9 +40,29 @@ const InvitacionesJefe = () => {
 
     const filteredInvitations = filter === 'active' ? activeInvitations : pastInvitations;
 
+    const fabStyle = {
+        position: 'fixed',
+        bottom: 16,
+        right: 16,
+        backgroundColor: '#0d1b2a',
+        '&:hover': {backgroundColor: '#D2E0FB'}
+      };
+      
+    const matches = useMediaQuery('(max-width:768px)');
+
+    const handleClick = () => {
+        const element =  document.getElementById('hastaAbajoBaby');
+        if (element) element.scrollIntoView({behavior: 'smooth'});
+    }
+
     return (
         <>
             <Navbar />
+            {matches && (
+                <Fab size='medium' color='primary' className='fab' aria-label='Ir al menu' sx={fabStyle} onClick={handleClick}>
+                    <WidgetsIcon/>
+                </Fab>
+            )}
             <div className='father' >
                 <div className='Left' id='scroller'>
 
@@ -129,7 +150,7 @@ const InvitacionesJefe = () => {
 
 
                 </div>
-                <div className='Right'>
+                <div className='Right' id='hastaAbajoBaby'>
                     <Menu buttons={residentInChargeBtn} className='funca' />
                 </div>
             </div>
