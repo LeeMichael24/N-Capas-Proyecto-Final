@@ -5,10 +5,12 @@ import CardDetail from "../../../components/cards/cardDetail/cardDetail";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import "./invitadoHome.css";
+import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
 
 
 function InvitadoHome() {
     const buttons = [
+        { icon: <InsertInvitationRoundedIcon />, name: "Invitaciones", path: "/InvitadoHome",},
         { icon: <PersonRoundedIcon />, name: "Mi perfil", path: "/InvitadoHome/profileVisitante" },
         { icon: <LogoutRoundedIcon/>, name: 'Cerrar sesión', path: '/login' },
     ];
