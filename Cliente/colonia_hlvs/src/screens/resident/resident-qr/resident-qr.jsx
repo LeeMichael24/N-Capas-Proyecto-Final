@@ -7,11 +7,10 @@ import QRCode from "qrcode";
 //material
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
-import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
-import EventRepeatRoundedIcon from '@mui/icons-material/EventRepeatRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import { Fab, useMediaQuery } from '@mui/material';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+
+
 
 import { useEffect } from 'react';
 import Navbar from '../../../components/navbar/navbar';
@@ -38,9 +37,29 @@ function ResidentQr(){
         handlerQrCodeChanger()
     })
 
+    const fabStyle = {
+        position: 'fixed',
+        bottom: 16,
+        right: 16,
+        backgroundColor: '#0d1b2a',
+        '&:hover': {backgroundColor: '#D2E0FB'}
+      };
+      
+    const matches = useMediaQuery('(max-width:768px)');
+
+    const handleClick = () => {
+        const element =  document.getElementById('hastaAbajoBaby');
+        if (element) element.scrollIntoView({behavior: 'smooth'});
+    }
+
     return (
         <>
             <Navbar/>
+            {matches && (
+                <Fab size='medium' color='primary' className='fab' aria-label='Ir al menu' sx={fabStyle} onClick={handleClick}>
+                    <WidgetsIcon/>
+                </Fab>
+            )}
             <div className='father'>
                 <div className='Left'>
                     <h2> Tu codigo-QR</h2>
@@ -51,7 +70,7 @@ function ResidentQr(){
                     <canvas id='canvas' className='myQR'/>
                     <IconButton icon={<QrCode2RoundedIcon/>} text='Refrescar' onClick={handlerQrCodeChanger}/>
                 </div>
-                <div className='Right'>
+                <div className='Right' id='hastaAbajoBaby'>
                     <Menu buttons={residentButtons} className='funca'/>
                 </div>
             </div>

@@ -8,6 +8,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import CardContent from '@mui/material/CardContent';
+import { TextField } from '@mui/material';
 import QuantityInput from '../../../components/numberImput/numberImput';
 import IconButton from '../../../components/buttons/IconButton/IconButton';
 import { useState } from 'react';
@@ -15,6 +18,36 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function AdminHome() {
+
+  const [nuevoVigilante, setNuevoVigilante] = useState('');
+
+
+  const handleGuardarVigilante = () => {
+    // Asegúrate de que el nombre del nuevo vigilante no esté vacío
+    if (nuevoVigilante.trim() === '') {
+      toast.error('El nombre del vigilante no puede estar vacío');
+      //alert('El nombre del vigilante no puede estar vacío');
+      return;
+    }
+    const nuevoVigilanteObj = { id: rowsVigilantes.length + 1, Contador: rowsVigilantes.length + 1,NombreVigilante: nuevoVigilante };
+  
+    setRowsVigilantes([...rowsVigilantes, nuevoVigilanteObj]);
+  
+    setNuevoVigilante('');
+
+    toast.success('Vigilante agregado con éxito');
+
+  };
+
+  const handleDelete = (id) => {
+    const newRowsVigilantes = rowsVigilantes.filter(vigilante => vigilante.id !== id);
+    setRowsVigilantes(newRowsVigilantes);
+    toast.success('Vigilante eliminado con éxito');
+  };
+
+  const handleVisitanteChange = (event) => {
+    setNuevoVigilante(event.target.value);
+};
 
   const columns = [
     {
@@ -71,6 +104,49 @@ function AdminHome() {
   ];
 
 
+
+  const columnsVigilantes = [
+    {
+      field: 'Contador',
+      headerName: 'Vigilante',
+      type: 'number',
+      flex: 0,
+      headerAlign: 'center',
+      align: 'center',
+      editable: false,
+    },
+    {
+      field: 'NombreVigilante',
+      headerName: 'Nombre',
+      type: 'string',
+      flex: 1,
+      headerAlign: 'center',
+      align: 'center',
+      editable: false,
+    },
+
+    {
+      field: 'Eliminar',
+      headerName: '',
+      flex: 0,
+      headerAlign: 'center',
+      align: 'center',
+      renderCell: (params) => (
+        <IconButton
+          className="icon-delete"
+          onClick={() => handleDelete(params.row.id)}
+          icon={<DeleteOutlineIcon sx={{ color: '#0d1b2a' }} />}>
+        </IconButton>
+      ),
+    },
+  ];
+
+  const [rowsVigilantes, setRowsVigilantes] = useState([
+    { id: 1, Contador: 1, NombreVigilante: "Lee Fuentes", },
+
+  ]);
+
+
   const buttons = [
     { icon: <ShowChartIcon />, name: 'Panel de Control', path: '/admin' },
     { icon: <HolidayVillageIcon />, name: 'Administrar Casa', path: '/admin/administrar-casa' },
@@ -85,7 +161,7 @@ function AdminHome() {
 
   const handleUpdateClick = () => {
     console.log(`El nuevo valor es ${value}`);
-    setIsUpdated(false); 
+    setIsUpdated(false);
     toast.success(`El intervalo de tiempo se ha actualizado a ${value} minutos`);
 
   };
@@ -121,9 +197,36 @@ function AdminHome() {
         <h1 className='title-r'>Intervalo de duracion de invitaciones</h1>
 
         <div className='duracion'>
-        <QuantityInput value={value} onChange={handleChange} />
-        <IconButton className= {buttonClass} icon='' text='Actualizar' onClick={handleUpdateClick} disabled={!isUpdated}  />
+          <QuantityInput value={value} onChange={handleChange} />
+          <IconButton className={buttonClass} icon='' text='Actualizar' onClick={handleUpdateClick} disabled={!isUpdated} />
         </div>
+
+        <div>
+          <h1 className='title-r'> Vigilantes</h1>
+
+          <div className='table-container'>
+            <DataGridDemo rows={rowsVigilantes} columns={columnsVigilantes} pageSize={5} />
+          </div>
+
+          <div className="agregar-residente">
+            <CardContent className='CardContent'>
+              <div className='casa-edit-residentes'>
+                <h1 className='casa-title'>Agregar Vigilante</h1>
+              </div>
+
+              <div className='text-field-agregar'>
+              <TextField id="outlined-basic" label="Nombre del Vigilante" variant="outlined" onChange={handleVisitanteChange} value={nuevoVigilante} />
+              <IconButton className="icon-save-info" text={"Guardar"} onClick={handleGuardarVigilante} />
+              </div>
+
+            </CardContent>
+          </div>
+
+
+
+
+        </div>
+
       </div>
 
       <div className="menu-content">
