@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 //MUI
 import { Checkbox, FormControl, FormControlLabel, FormGroup, TextField, useMediaQuery, Fab } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import WidgetsIcon from '@mui/icons-material/Widgets';
 
 //sTYLES
 import './Invitation.css'
@@ -30,9 +31,29 @@ function RecurrntInvitation() {
         });
     };
 
+    const fabStyle = {
+        position: 'fixed',
+        bottom: 16,
+        right: 16,
+        backgroundColor: '#0d1b2a',
+        '&:hover': {backgroundColor: '#D2E0FB'}
+      };
+      
+    const matches = useMediaQuery('(max-width:768px)');
+
+    const handleClick = () => {
+        const element =  document.getElementById('hastaAbajoBaby');
+        if (element) element.scrollIntoView({behavior: 'smooth'});
+    }
+
     return(
         <>
             <Navbar/>
+            {matches && (
+                <Fab size='medium' color='primary' className='fab' aria-label='Ir al menu' sx={fabStyle} onClick={handleClick}>
+                    <WidgetsIcon/>
+                </Fab>
+            )}
             <div className='father'>
                 <div className='Left'>
                     <h2 className='mauri'>Solicitar invitacion recurrente</h2>
@@ -79,7 +100,7 @@ function RecurrntInvitation() {
                     </div>
                     <IconButton icon={null} text={'Solicitar Invitacion'} onClick={notify}/>
                 </div>
-                <div className='Right'>
+                <div className='Right' id='hastaAbajoBaby'>
                     <Menu buttons={residentInChargeBtn} className='funca'/>
                 </div>
             </div>
