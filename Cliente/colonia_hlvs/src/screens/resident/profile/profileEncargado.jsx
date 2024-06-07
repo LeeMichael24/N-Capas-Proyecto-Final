@@ -18,7 +18,7 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 
 import IconButton from "../../../components/buttons/IconButton/IconButton";
 import Navbar from "../../../components/navbar/navbar";
-import residentButtons from '../../../assets/staticInfo/buttonsArray'
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 
 
@@ -101,7 +101,7 @@ function Profile() {
               
             </div>
             <div id="hastaAbajoBaby" className="Right">
-              <Menu buttons={residentButtons} className="funca" />
+              <Menu buttons={residentInChargeBtn} className="funca" />
             </div>
           </div>
         </>

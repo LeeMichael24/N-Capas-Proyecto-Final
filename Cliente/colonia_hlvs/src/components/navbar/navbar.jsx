@@ -1,5 +1,6 @@
 import './navbar.css';
 import Logo from '../../assets/images/Logo.png';
+import { Navigate } from 'react-router-dom';
 
 function Navbar() {
   const name = 'Jose';
@@ -10,7 +11,7 @@ function Navbar() {
         <img className='logo-img' src={Logo} alt="Logo" />
       </div>
       <div className="welcome-message">
-        Bienvenido: {name + '!'}
+        Bienvenido {name}
       </div>
     </nav>
   )

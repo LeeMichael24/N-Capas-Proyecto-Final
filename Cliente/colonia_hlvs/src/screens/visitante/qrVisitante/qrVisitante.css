@@ -1,5 +1,5 @@
 /* Contenedor principal que ocupa toda la altura de la ventana y centra el contenido */
-.PadreHomeVisitante {
+.fatherVisitanteContainer {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 /* Contenedor para el contenido principal que permite el desplazamiento y centra el contenido */
-.invitadoHome {
+.homeQr-visitante {
   display: flex;
   height: fit-content;
   width: 100%;
@@ -21,7 +21,7 @@
 }
 
 /* Estilo para el contenedor izquierdo */
-.left-container-visitante {
+.Left-visitante {
   width: 65%;
   display: flex;
   background-color: white;
@@ -31,78 +31,70 @@
   box-sizing: border-box;
   padding: 20px;
   margin-top: 70px;
-  overflow-y: auto; /* Permite el desplazamiento vertical */
-  max-height: 80vh; /* Ajusta la altura máxima para permitir el desplazamiento */
-  -ms-overflow-style: none;  /* Oculta barra de desplazamiento en IE y Edge */
-  scrollbar-width: none;  /* Oculta barra de desplazamiento en Firefox */
-}
 
-.left-container-visitante::-webkit-scrollbar {
-  display: none; /* Oculta barra de desplazamiento en Chrome, Safari y Opera */
-}
-
-/* Estilo para el título */
-.h1-visitante {
-  margin-bottom: 40px;
-}
-
-/* Estilo para el contenedor de las tarjetas */
-.card-style-mt {
+/* Contenedor adicional para centrar los elementos dentro de Left-visitante */
+.lefQr-container {
+  width: 35vh;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: center;
   align-items: center;
 }
 
-/* Estilo para el botón adicional */
-.extra-button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.extra-button:hover {
-  background-color: #0056b3;
-}
-
 /* Estilo para el contenedor derecho */
-.right-container-visitante {
+.Right-visitante {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35%;
 }
 
+/* Estilo para la tarjeta de consejos */
+.Hint-visitante {
+  display: flex;
+  font-size: var(--hint-font-size);
+  background-color: var(--accent);
+  margin-top: 2rem;
+  font-weight: normal;
+  padding: 1rem;
+  width: 100%;
+  flex-flow: row;
+  align-items: center;
+  text-align: left;
+  border-radius: var(--rad);
+}
+
+.Hint-visitante .icon {
+  margin-right: 20px;
+}
+
+/* Estilo para el canvas del QR */
+.myQR-visitante {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 20px 0;
+}
+
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
-  .invitadoHome {
+  .homeQr-visitante {
     flex-direction: column;
     height: 100vh;
   }
 
-  .left-container-visitante,
-  .right-container-visitante {
+  .Left-visitante,
+  .Right-visitante {
     width: 100%;
     min-width: 100%;
     justify-content: center;
     align-items: center;
   }
 
-  .left-container-visitante {
-    height: 100%;
+  .Left-visitante {
+    height: 75%;
   }
-
-  .right-container-visitante {
+  .Right-visitante{
     background-color: aliceblue;
-  }
-  .h1-visitante {
-    margin-top: 245px;
   }
 }

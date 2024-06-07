@@ -1,30 +1,35 @@
+.padreProfile{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .profileVisitante-home {
   display: flex;
-  height: 100vh;
+  height: fit-content;
   width: 100%;
   box-sizing: border-box;
   flex: 1 0 auto;
   overflow: auto;
-  }
+  align-items: center;
+  justify-content: center;
+}
   
   .profileVisitante-left-container {
-    min-width: 65%;
-    height: 100vh;
+    width: 65%;
     display: flex;
     background-color: white;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea el contenido al principio */
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 70px;
   }
-  
-  .profileVisitante-right-container {
-    display: flex;
-    min-width: 35%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-  }
+
   
   .profileVisitante-box-container {
     background: var(--accent);
@@ -35,6 +40,11 @@
   
   .profileVisitante-text-field {
     background: white;
+    width: 100%;
+  }
+
+  .profileVisitante-form-container{
+    width: 100%;
   }
   
   .profileVisitante-hint {
@@ -78,14 +88,34 @@
     font-size: 20px;
   }
   
+  @media (min-width: 768px) {
+    .profileVisitante-right-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35%;
+    }
+  }
   @media (max-width: 768px) {
     .profileVisitante-home {
       flex-direction: column;
-      align-items: center;
-      padding: 20px;
+      height: 100vh;
+    }
+
+    .profileVisitante-left-container{
+      height: 70% ;
+      width: 100%;
+      min-width: 100%;
       justify-content: center;
-      justify-items: center;
-      min-width: 300px;
+      align-items: center;
+    }
+
+    .profileVisitante-right-container{
+      width: 100%;
+      min-width: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: aliceblue;
     }
   }
   

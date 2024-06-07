@@ -6,7 +6,7 @@ import Menu from '../../../components/menu/menu';
 import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
 import Navbar from '../../../components/navbar/navbar';
 
-import residentButtons from '../../../assets/staticInfo/buttonsArray'
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 function dashboard() {
 
@@ -28,7 +28,7 @@ function dashboard() {
           <h4> Presione el boton para generar el codigo-QR</h4>
         </div>
         <div id="stay">
-          <Menu buttons={residentButtons} className="funca" />
+          <Menu buttons={residentInChargeBtn} className="funca" />
         </div>
       </div>
     </>

@@ -6,18 +6,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //MUI
-import { Checkbox, FormControl, FormControlLabel, FormGroup, TextField, Fab, useMediaQuery } from '@mui/material';
+import { Checkbox, FormControl, FormControlLabel, FormGroup, TextField, useMediaQuery, Fab } from '@mui/material';
 import { LocalizationProvider, TimePicker, DatePicker } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import WidgetsIcon from '@mui/icons-material/Widgets';
-
 
 //sTYLES
 import './Invitation.css'
 import '../dashboard/dashboard.css';
 import Navbar from '../../../components/navbar/navbar';
 
-import residentButtons from '../../../assets/staticInfo/buttonsArray'
+import residentInChargeBtn from '../../../assets/staticInfo/buttonEncargadoArray';
 
 
 function RecurrntInvitation() {
@@ -102,7 +101,7 @@ function RecurrntInvitation() {
                     <IconButton icon={null} text={'Solicitar Invitacion'} onClick={notify}/>
                 </div>
                 <div className='Right' id='hastaAbajoBaby'>
-                    <Menu buttons={residentButtons} className='funca'/>
+                    <Menu buttons={residentInChargeBtn} className='funca'/>
                 </div>
             </div>
         </>

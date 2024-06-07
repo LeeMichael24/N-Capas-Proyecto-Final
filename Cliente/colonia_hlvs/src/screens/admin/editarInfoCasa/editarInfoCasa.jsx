@@ -56,10 +56,9 @@ function EditarInfoCasa() {
 
     const buttons = [
         { icon: <ShowChartIcon />, name: 'Panel de Control', path: '/admin' },
-        { icon: <HolidayVillageIcon />, name: 'Administrar Casa', path: '/admincasa' },
-        { icon: <PersonIcon />, name: 'Mi Perfil', path: '/cerrar-sesion' },
+        { icon: <HolidayVillageIcon />, name: 'Administrar Casa', path: '/admin/administrar-casa' },
         { icon: <LogoutIcon />, name: 'Cerrar sesión', path: '/login' },
-    ];
+      ];
 
 
     const columns = [

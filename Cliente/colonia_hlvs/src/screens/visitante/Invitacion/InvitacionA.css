@@ -1,20 +1,23 @@
+/* Contenedor principal que ocupa toda la altura de la ventana y centra el contenido */
+.padreVisitante {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor para el contenido principal que permite el desplazamiento y centra el contenido */
 .invitacionA-home {
   display: flex;
-  height: 100vh;
+  height: fit-content;
   width: 100%;
   box-sizing: border-box;
   flex: 1 0 auto;
   overflow: auto;
-}
-
-.invitacionA-left-container {
-  min-width: 65%;
-  height: 100vh;
-  display: flex;
-  background-color: white;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .invitacionA-h1-visitante {
@@ -27,15 +30,6 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-}
-
-.invitacionA-right-container {
-  display: flex;
-  min-width: 35%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: aliceblue;
 }
 
 .invitacionA-button-container {
@@ -65,9 +59,48 @@
   font-size: 20px;
 }
 
-/* Media Queries para hacer la vista responsive */
+/* Estilo para el contenedor izquierdo */
+.invitacionA-left-container {
+  width: 65%;
+  display: flex;
+  background-color: white;
+  justify-content: flex-start; /* Alinea el contenido al principio */
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+/* Estilo para el contenedor derecho */
+.invitacionA-right-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
+
+/* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
   .invitacionA-home {
     flex-direction: column;
+    height: 100vh;
+  }
+
+  .invitacionA-left-container,
+  .invitacionA-right-container {
+    width: 100%;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .invitacionA-left-container {
+    height: 75%;
+    margin-bottom: 20px;
+  }
+
+  .invitacionA-right-container{
+    background-color: aliceblue;
   }
 }
