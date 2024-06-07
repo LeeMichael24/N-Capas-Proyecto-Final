@@ -31,6 +31,7 @@
   box-sizing: border-box;
   padding: 20px;
   margin-top: 70px;
+}
 
 /* Contenedor adicional para centrar los elementos dentro de Left-visitante */
 .lefQr-container {
@@ -79,22 +80,23 @@
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
   .homeQr-visitante {
-    flex-direction: column;
+    flex-direction: column !important;
     height: 100vh;
   }
 
   .Left-visitante,
   .Right-visitante {
-    width: 100%;
-    min-width: 100%;
-    justify-content: center;
-    align-items: center;
+    width: 100% !important;
+    min-width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .Left-visitante {
-    height: 75%;
+    height: 75% !important;
   }
-  .Right-visitante{
-    background-color: aliceblue;
+
+  .Right-visitante {
+    background-color: aliceblue !important;
   }
 }

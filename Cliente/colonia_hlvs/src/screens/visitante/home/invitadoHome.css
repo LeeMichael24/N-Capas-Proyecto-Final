@@ -97,12 +97,13 @@
 
   .left-container-visitante {
     height: 100%;
+    margin-top: 50px !important;
   }
 
   .right-container-visitante {
     background-color: aliceblue;
   }
   .h1-visitante {
-    margin-top: 245px;
+    margin-top: 410px !important;
   }
 }
