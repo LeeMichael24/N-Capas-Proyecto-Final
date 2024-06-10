@@ -101,6 +101,14 @@ const HomeVigilante = () => {
             </div>
             <div className="textFlied">
               <TextField
+                id="outlined-casa-input"
+                label="Numero de Casa"
+                type="text"
+                autoComplete="current-casa"
+              />
+            </div>
+            <div className="textFlied">
+              <TextField
                 id="outlined-dui-input"
                 label="DUI"
                 type="text"
